@@ -1,0 +1,28 @@
+body {
+  font-family: 'Raleway', sans-serif;
+}
+
+.app-container {
+  display: flex;
+  min-height: 100vh; /* Para ocupar a tela inteira */
+}
+
+.content-container {
+  flex: 1; 
+  padding: 160px 360px 160px 360px; /* Espaçamento no conteúdo */
+}
+
+h1 {
+  font-size: 300 px;
+  margin-bottom: 30px;
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 25px;
+}
+
+p {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
