@@ -93,7 +93,7 @@ d) 12
 5.  a = 5
     b = a
     a = 2
-   print(a * b)
+    print(a * b)
 
 a) 4
 b) 10   #Saída
