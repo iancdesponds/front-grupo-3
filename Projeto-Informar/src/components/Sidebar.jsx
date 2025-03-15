@@ -389,7 +389,19 @@ export default function Sidebar() {
                 </ListItemButton>
               </ListItem>
 
+              {/* Funções */}
+              <ListItem disablePadding>
+                <ListItemButton
+                  component={NavLink}
+                  to="/aula-6/Funcoes"
+                  sx={{ pl: 4 }} // indent para destacar subitem
+                  style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                >
+                  <ListItemText primaryTypographyProps={{ fontWeight: 'bold', paddingLeft: '36px', paddingRight: '36px' }} primary="Funções" />
+                </ListItemButton>
+              </ListItem>
               {/* Adicione mais subitens se quiser */}
+
             </List>
           </Collapse>
 
