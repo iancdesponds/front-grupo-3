@@ -6,9 +6,7 @@ function Operacoes() {
     <div>
       <h1>Aula 1 - Operações</h1>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum 
-        ullamcorper enim at nulla faucibus luctus. Quisque pulvinar augue non 
-        justo finibus cursus.
+        Vamos relembrar do que aprendemos na aula a respeito de operações em Python.
       </p>
       <QuestionCard
         questionTitle="Exercício 1"
@@ -23,7 +21,7 @@ print(x)`}
           "12"
         ]}
         correctIndex={2}
-        explanation="O programa faz primeiro a mulitplicação e depois a adição, resultando em 10."
+        explanation="O programa segue a ordem de operações, fazendo primeiro a multiplicação e depois a adição."
         localStorageKey="exercicio1_operacoes"
       />
       <QuestionCard
@@ -31,7 +29,7 @@ print(x)`}
         questionDescription="Considere o seguinte código:"
         codeSnippet={`x = (2 + 2) * 4
 print(x)`}
-        questionText="O que esse código faz?"
+        questionText="O que esse código imprime no terminal?"
         options={[
           "16",
           "10",
@@ -39,8 +37,56 @@ print(x)`}
           "8"
         ]}
         correctIndex={0}
-        explanation="Dessa vez o programa faz a soma entre parênteses e depois faz a multiplicação."
+        explanation="O programa faz as operações entre parênteses e depois as que estão fora."
         localStorageKey="exercicio2_operacoes"
+      />
+      <QuestionCard
+        questionTitle="Exercício 3"
+        questionDescription="Considere o seguinte código:"
+        codeSnippet={`x = 4 / 2 * 2
+print(x)`}
+        questionText="O que esse código imprime no terminal?"
+        options={[
+          "1",
+          "4",
+          "2",
+          "8"
+        ]}
+        correctIndex={1}
+        explanation="As operações tem que ser feitas em ordem."
+        localStorageKey="exercicio3_operacoes"
+      />
+      <QuestionCard
+        questionTitle="Exercício 4"
+        questionDescription="Considere o seguinte código:"
+        codeSnippet={`x = 2 * 5 ** 2
+print(x)`}
+        questionText="O que esse código imprime no terminal?"
+        options={[
+          "100",
+          "20",
+          "50",
+          "25"
+        ]}
+        correctIndex={2}
+        explanation="O programa segue a ordem de operações, fazendo a potenciação primeiro e depois a multiplicação."
+        localStorageKey="exercicio4_operacoes"
+      />
+      <QuestionCard
+        questionTitle="Exercício 5"
+        questionDescription="Considere o seguinte código:"
+        codeSnippet={`x = (8 / 2) ** 2
+print(x)`}
+        questionText="O que esse código imprime no terminal?"
+        options={[
+          "8",
+          "64",
+          "4",
+          "16"
+        ]}
+        correctIndex={3}
+        explanation="O programa faz as operações entre parênteses e depois as que estão fora."
+        localStorageKey="exercicio5_operacoes"
       />
       
       
@@ -49,4 +95,3 @@ print(x)`}
 }
 
 export default Operacoes;
-
