@@ -29,16 +29,17 @@ print(x)`}
       <QuestionCard
         questionTitle="Exercício 2"
         questionDescription="Considere o seguinte código:"
-        codeSnippet={``}
+        codeSnippet={`x = (2 + 2) * 4
+print(x)`}
         questionText="O que esse código faz?"
         options={[
-          "",
-          "",
-          "",
-          ""
+          "16",
+          "10",
+          "12",
+          "9"
         ]}
         correctIndex={0}
-        explanation=""
+        explanation="Dessa vez o programa faz a soma entre parênteses e depois faz a multiplicação."
         localStorageKey="exercicio2_operacoes"
       />
       
