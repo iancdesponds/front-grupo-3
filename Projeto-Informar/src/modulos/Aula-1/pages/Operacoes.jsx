@@ -36,7 +36,7 @@ print(x)`}
           "16",
           "10",
           "12",
-          "9"
+          "8"
         ]}
         correctIndex={0}
         explanation="Dessa vez o programa faz a soma entre parênteses e depois faz a multiplicação."
