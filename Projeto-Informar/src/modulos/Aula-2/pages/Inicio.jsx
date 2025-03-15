@@ -12,7 +12,7 @@ function InicioAula2() {
       </p>
 
       <QuestionCard
-        questionTitle="Exercício 2"
+        questionTitle="Exercício 1"
         questionDescription="Considere o código a seguir:"
         codeSnippet={`valor1 = 3
 valor2 = 10
@@ -48,6 +48,8 @@ print(f"Os números sorteados foram: {valor2} {valor4} {valor3} {valor1}")`}
         explanation="O print exibe o texto no terminal."
         localStorageKey="exercicio3"
       />
+
+      
     </div>
   );
 }

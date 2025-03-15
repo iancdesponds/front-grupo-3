@@ -11,7 +11,8 @@ import Operacoes from './modulos/Aula-1/pages/Operacoes';
 import Terminal from './modulos/Aula-1/pages/Terminal';
 
 // Páginas de Aula-2
-import InicioAula2 from './modulos/Aula-2/pages/inicio';
+import InicioAula2 from './modulos/Aula-2/pages/Inicio';
+import Condicionais from './modulos/Aula-2/pages/Condicionais';
 
 // Páginas de Aula-3
 import InicioAula3 from './modulos/Aula-3/pages/Inicio';
@@ -48,7 +49,8 @@ function App() {
 
             {/* Rotas de Aula-2 */}
             <Route path="/aula-2/inicio" element={<InicioAula2 />} />
-        
+            <Route path="/aula-2/condicionais" element={<Condicionais />} />
+     
             {/* Rotas de Aula-3 */}
             <Route path="/aula-3/inicio" element={<InicioAula3 />} />
         

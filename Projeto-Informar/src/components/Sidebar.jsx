@@ -261,6 +261,16 @@ export default function Sidebar() {
               </ListItem>
 
               {/* Adicione mais subitens se quiser */}
+              <ListItem disablePadding>
+                <ListItemButton
+                  component={NavLink}
+                  to="/aula-2/condicionais"
+                  sx={{ pl: 4 }} // indent para destacar subitem
+                  style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                >
+                  <ListItemText primaryTypographyProps={{ fontWeight: 'bold', paddingLeft: '36px', paddingRight: '36px' }} primary="Condicionais" />
+                </ListItemButton>
+              </ListItem>
             </List>
           </Collapse>
 
