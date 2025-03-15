@@ -47,8 +47,6 @@ d) idoso
    c = a - b
    if subtraindo:
        print(c)
-   else:
-       c = a + b
 
 a) 6
 b) 4
