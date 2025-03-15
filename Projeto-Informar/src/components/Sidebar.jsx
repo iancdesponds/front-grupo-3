@@ -37,6 +37,8 @@ export default function Sidebar() {
     const [openAula5, setOpenAula5] = useState(false);
     // Controla se o sub-menu da Aula-6 está expandido
     const [openAula6, setOpenAula6] = useState(false);
+    // Controla se o sub-menu da Aula-6 está expandido
+    const [openExercicio1, setExercicio1] = useState(false);
 
   const toggleDrawer = () => {
     setOpen(!open);
@@ -60,6 +62,9 @@ export default function Sidebar() {
     const handleAula6Click = () => {
     setOpenAula6(!openAula6);
     };
+    const handleExercicio1Click = () => {
+    setExercicio1(!openExercicio1);
+    };
 
   // Largura da sidebar
   const drawerWidth = 300;
@@ -77,6 +82,7 @@ export default function Sidebar() {
   const isAula4Active = location.pathname.startsWith('/aula-4');
   const isAula5Active = location.pathname.startsWith('/aula-5');
   const isAula6Active = location.pathname.startsWith('/aula-6');
+  const isExercicio1Active = location.pathname.startsWith('/Exercicio-1');
 
   return (
     <>
@@ -372,6 +378,35 @@ export default function Sidebar() {
                 <ListItemButton
                   component={NavLink}
                   to="/aula-6/inicio"
+                  sx={{ pl: 4 }} // indent para destacar subitem
+                  style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                >
+                  <ListItemText primaryTypographyProps={{ fontWeight: 'bold', paddingLeft: '36px', paddingRight: '36px' }} primary="Início" />
+                </ListItemButton>
+              </ListItem>
+
+              {/* Adicione mais subitens se quiser */}
+            </List>
+          </Collapse>
+
+          {/* EXERCÍCIO-1: item que expande subitens */}
+          <ListItem disablePadding>
+            <ListItemButton
+              onClick={handleExercicio1Click}
+              style={isExercicio1Active ? activeStyle : {}}
+            >
+              <ListItemText primaryTypographyProps={{ fontWeight: 'bold', paddingLeft: '36px', paddingRight: '36px' }} primary="Exercicio 1 - Python Básico" />
+              {openExercicio1 ? <ExpandLess /> : <ExpandMore />}
+            </ListItemButton>
+          </ListItem>
+
+          <Collapse in={openExercicio1} timeout="auto" unmountOnExit>
+            <List component="div" disablePadding>
+              {/* Início */}
+              <ListItem disablePadding>
+                <ListItemButton
+                  component={NavLink}
+                  to="/Exercicio-1/inicio"
                   sx={{ pl: 4 }} // indent para destacar subitem
                   style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 >

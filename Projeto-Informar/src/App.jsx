@@ -25,6 +25,9 @@ import InicioAula5 from './modulos/Aula-5/pages/inicio';
 // Páginas de Aula-6
 import InicioAula6 from './modulos/Aula-6/pages/inicio';
 
+//Páginas de Exercicios-1
+import InicioExercicio1 from './modulos/Exercícios 1/pages/Inicio';
+
 import './App.css';
 
 function App() {
@@ -60,6 +63,9 @@ function App() {
         
             {/* Rotas de Aula-6 */}
             <Route path="/aula-6/inicio" element={<InicioAula6 />} />
+
+            {/* Rotas de Exercícios 1*/}
+            <Route path="/Exercicio-1/inicio" element={<InicioExercicio1 />} />
         
             {/* Adicione outras rotas conforme precisar */}
           </Routes>
