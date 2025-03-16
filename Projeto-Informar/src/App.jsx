@@ -11,11 +11,12 @@ import Operacoes from './modulos/Aula-1/pages/Operacoes';
 import Terminal from './modulos/Aula-1/pages/Terminal';
 
 // Páginas de Aula-2
-import InicioAula2 from './modulos/Aula-2/pages/Inicio';
-import Condicionais from './modulos/Aula-2/pages/Condicionais';
+import InicioAula2 from './modulos/Aula-2/pages/inicio';
 
 // Páginas de Aula-3
 import InicioAula3 from './modulos/Aula-3/pages/Inicio';
+import Listas from './modulos/Aula-3/pages/Listas';
+import Strings from './modulos/Aula-3/pages/Strings';
 
 // Páginas de Aula-4
 import InicioAula4 from './modulos/Aula-4/pages/inicio';
@@ -53,10 +54,11 @@ function App() {
 
             {/* Rotas de Aula-2 */}
             <Route path="/aula-2/inicio" element={<InicioAula2 />} />
-            <Route path="/aula-2/condicionais" element={<Condicionais />} />
-     
+        
             {/* Rotas de Aula-3 */}
             <Route path="/aula-3/inicio" element={<InicioAula3 />} />
+            <Route path="/aula-1/listas" element={<Listas />} />
+            <Route path="/aula-1/strings" element={<Strings />} />
         
             {/* Rotas de Aula-4 */}
             <Route path="/aula-4/inicio" element={<InicioAula4 />} />
