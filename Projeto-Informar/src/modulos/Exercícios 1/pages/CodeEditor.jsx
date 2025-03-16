@@ -37,7 +37,7 @@ const CodeEditor = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ code: code }), // Enviando o código para o backend
+        body: JSON.stringify({ code: code, test_id: 2 }), // Enviando o código para o backend
       });
 
       const result = await response.json();
