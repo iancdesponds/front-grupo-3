@@ -6,9 +6,7 @@ function Funcoes() {
     <div>
       <h1>Aula 6 - Funções</h1>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum 
-        ullamcorper enim at nulla faucibus luctus. Quisque pulvinar augue non 
-        justo finibus cursus.
+      Vamos relembrar do que aprendemos na aula a respeito de funções em Python.
       </p>
 
       <QuestionCard
@@ -55,7 +53,7 @@ function Funcoes() {
       />
       <QuestionCard
         questionTitle="Exercício 4"
-        questionDescription="Considere o código a seguir:"
+        questionDescription="Considere o seguinte código:"
         codeSnippet={`def soma(a, b=5):
     return a + b
 
@@ -76,7 +74,7 @@ print(resultado)
 
       <QuestionCard
         questionTitle="Exercício 5"
-        questionDescription="Considere o código a seguir:"
+        questionDescription="Considere o seguinte código:"
         codeSnippet={`def misterio(x):
     if x % 2 == 0:
         return "Par"
