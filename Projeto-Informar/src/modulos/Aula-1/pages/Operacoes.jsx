@@ -13,7 +13,7 @@ function Operacoes() {
         questionDescription="Considere o seguinte código:"
         codeSnippet={`x = 2 + 2 * 4
 print(x)`}
-        questionText="O que esse código imprime no terminal?"
+        questionText="Qual será a mensagem impressa no terminal?"
         options={[
           "8",
           "16",
@@ -29,7 +29,7 @@ print(x)`}
         questionDescription="Considere o seguinte código:"
         codeSnippet={`x = (2 + 2) * 4
 print(x)`}
-        questionText="O que esse código imprime no terminal?"
+        questionText="Qual será a mensagem impressa no terminal?"
         options={[
           "16",
           "10",
@@ -45,7 +45,7 @@ print(x)`}
         questionDescription="Considere o seguinte código:"
         codeSnippet={`x = 4 / 2 * 2
 print(x)`}
-        questionText="O que esse código imprime no terminal?"
+        questionText="Qual será a mensagem impressa no terminal?"
         options={[
           "1",
           "4",
@@ -61,7 +61,7 @@ print(x)`}
         questionDescription="Considere o seguinte código:"
         codeSnippet={`x = 2 * 5 ** 2
 print(x)`}
-        questionText="O que esse código imprime no terminal?"
+        questionText="Qual será a mensagem impressa no terminal?"
         options={[
           "100",
           "20",
@@ -77,7 +77,7 @@ print(x)`}
         questionDescription="Considere o seguinte código:"
         codeSnippet={`x = (8 / 2) ** 2
 print(x)`}
-        questionText="O que esse código imprime no terminal?"
+        questionText="Qual será a mensagem impressa no terminal?"
         options={[
           "8",
           "64",
