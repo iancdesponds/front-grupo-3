@@ -322,7 +322,7 @@ export default function Sidebar() {
               <ListItem disablePadding>
                 <ListItemButton
                   component={NavLink}
-                  to="/aula-1/listas"
+                  to="/aula-3/listas"
                   sx={{ pl: 4 }}
                   style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 >
@@ -333,7 +333,7 @@ export default function Sidebar() {
               <ListItem disablePadding>
                 <ListItemButton
                   component={NavLink}
-                  to="/aula-1/strings"
+                  to="/aula-3/strings"
                   sx={{ pl: 4 }}
                   style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 >
