@@ -456,11 +456,11 @@ export default function Sidebar() {
               <ListItem disablePadding>
                 <ListItemButton
                   component={NavLink}
-                  to="/Exercicio-1/inicio"
+                  to="/Exercicio-1/ex_soma"
                   sx={{ pl: 4 }} // indent para destacar subitem
                   style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 >
-                  <ListItemText primaryTypographyProps={{ fontWeight: 'bold', paddingLeft: '36px', paddingRight: '36px' }} primary="Início" />
+                  <ListItemText primaryTypographyProps={{ fontWeight: 'bold', paddingLeft: '36px', paddingRight: '36px' }} primary="Exercício de Soma" />
                 </ListItemButton>
               </ListItem>
 
@@ -483,6 +483,17 @@ export default function Sidebar() {
                   style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 >
                   <ListItemText primaryTypographyProps={{ fontWeight: 'bold', paddingLeft: '36px', paddingRight: '36px' }} primary="Exercício da Área do Triangulo" />
+                </ListItemButton>
+              </ListItem>
+
+              <ListItem disablePadding>
+                <ListItemButton
+                  component={NavLink}
+                  to="/Exercicio-1/ex_area_do_circulo"
+                  sx={{ pl: 4 }} // indent para destacar subitem
+                  style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                >
+                  <ListItemText primaryTypographyProps={{ fontWeight: 'bold', paddingLeft: '36px', paddingRight: '36px' }} primary="Exercício da Área do Circulo" />
                 </ListItemButton>
               </ListItem>
               {/* Adicione mais subitens se quiser */}

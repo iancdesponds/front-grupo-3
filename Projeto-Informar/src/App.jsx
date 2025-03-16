@@ -30,9 +30,10 @@ import InicioAula6 from './modulos/Aula-6/pages/inicio';
 import Funcoes from './modulos/Aula-6/pages/Funcoes'
 
 //Páginas de Exercicios-1
-import InicioExercicio1 from './modulos/Exercícios 1/pages/Inicio';
+import InicioExercicio1 from './modulos/Exercícios 1/pages/Ex_soma';
 import Ex_maximo from './modulos/Exercícios 1/pages/Ex_maximo';
-import Ex_area_do_triangulo from './modulos/Exercícios 1/pages/Ex_area_do_triagulo';
+import Ex_area_do_triangulo from './modulos/Exercícios 1/pages/Ex_area_do_triangulo';
+import Ex_area_do_circulo from './modulos/Exercícios 1/pages/Ex_area_do_circulo';
 
 import './App.css';
 
@@ -76,9 +77,10 @@ function App() {
             <Route path="/aula-6/funcoes" element={<Funcoes />} />
 
             {/* Rotas de Exercícios 1*/}
-            <Route path="/Exercicio-1/inicio" element={<InicioExercicio1 />} />
+            <Route path="/Exercicio-1/ex_soma" element={<InicioExercicio1 />} />
             <Route path="/Exercicio-1/ex_maximo" element={<Ex_maximo />} />
             <Route path="/Exercicio-1/ex_area_do_triangulo" element={<Ex_area_do_triangulo />} />
+            <Route path="/Exercicio-1/ex_area_do_circulo" element={<Ex_area_do_circulo />} />
 
         
             {/* Adicione outras rotas conforme precisar */}
