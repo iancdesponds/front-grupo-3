@@ -87,4 +87,4 @@ function Strings() {
   );
 }
 
-export default Listas;
+export default Strings;
