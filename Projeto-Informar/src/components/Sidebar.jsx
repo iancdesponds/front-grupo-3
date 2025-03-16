@@ -180,7 +180,7 @@ export default function Sidebar() {
               onClick={handleAula1Click}
               style={isAula1Active ? activeStyle : {}}
             >
-              <ListItemText primaryTypographyProps={{ fontWeight: 'bold', paddingLeft: '36px', paddingRight: '36px' }} primary="Aula 1 - Operadores" />
+              <ListItemText primaryTypographyProps={{ fontWeight: 'bold', paddingLeft: '36px', paddingRight: '36px' }} primary="Aula 1 - Operadores e Variáveis" />
               {openAula1 ? <ExpandLess /> : <ExpandMore />}
             </ListItemButton>
           </ListItem>
@@ -265,6 +265,18 @@ export default function Sidebar() {
                   <ListItemText primaryTypographyProps={{ fontWeight: 'bold', paddingLeft: '36px', paddingRight: '36px' }} primary="Início" />
                 </ListItemButton>
               </ListItem>
+              {/* Condicionais */}
+              <ListItem disablePadding>
+                <ListItemButton
+                  component={NavLink}
+                  to="/aula-2/condicionais"
+                  sx={{ pl: 4 }} // indent para destacar subitem
+                  style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                >
+                  <ListItemText primaryTypographyProps={{ fontWeight: 'bold', paddingLeft: '36px', paddingRight: '36px' }} primary="Condicionais" />
+                </ListItemButton>
+              </ListItem>
+              
 
               {/* Adicione mais subitens se quiser */}
               <ListItem disablePadding>
@@ -286,7 +298,7 @@ export default function Sidebar() {
               onClick={handleAula3Click}
               style={isAula3Active ? activeStyle : {}}
             >
-              <ListItemText primaryTypographyProps={{ fontWeight: 'bold', paddingLeft: '36px', paddingRight: '36px' }} primary="Aula 3 - Listas" />
+              <ListItemText primaryTypographyProps={{ fontWeight: 'bold', paddingLeft: '36px', paddingRight: '36px' }} primary="Aula 3 - Listas e Strings" />
               {openAula3 ? <ExpandLess /> : <ExpandMore />}
             </ListItemButton>
           </ListItem>
@@ -303,6 +315,29 @@ export default function Sidebar() {
                   style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 >
                   <ListItemText primaryTypographyProps={{ fontWeight: 'bold', paddingLeft: '36px', paddingRight: '36px' }} primary="Início" />
+                </ListItemButton>
+              </ListItem>
+
+              {/* Listas */}
+              <ListItem disablePadding>
+                <ListItemButton
+                  component={NavLink}
+                  to="/aula-1/listas"
+                  sx={{ pl: 4 }}
+                  style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                >
+                  <ListItemText primaryTypographyProps={{ fontWeight: 'bold', paddingLeft: '36px', paddingRight: '36px' }} primary="Listas" />
+                </ListItemButton>
+              </ListItem>
+              {/* Strings */}
+              <ListItem disablePadding>
+                <ListItemButton
+                  component={NavLink}
+                  to="/aula-1/strings"
+                  sx={{ pl: 4 }}
+                  style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                >
+                  <ListItemText primaryTypographyProps={{ fontWeight: 'bold', paddingLeft: '36px', paddingRight: '36px' }} primary="Strings" />
                 </ListItemButton>
               </ListItem>
 
