@@ -6,14 +6,12 @@ function Condicionais() {
     <div>
       <h1>Aula 2 - Condicionais</h1>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum 
-        ullamcorper enim at nulla faucibus luctus. Quisque pulvinar augue non 
-        justo finibus cursus.
+      Vamos relembrar do que aprendemos na aula a respeito de condicionais em Python.
       </p>
 
       <QuestionCard
         questionTitle="Exercício 1"
-        questionDescription="Considere o código a seguir:"
+        questionDescription="Considere o seguinte código:"
         codeSnippet={`x = 12
    if x < 10:
        print('O numero é menor que 10.')
@@ -34,7 +32,7 @@ function Condicionais() {
       {/* Você pode reutilizar o componente para outro exercício: */}
       <QuestionCard
         questionTitle="Exercício 2"
-        questionDescription="Outro exemplo..."
+        questionDescription="Considere o seguinte código:"
         codeSnippet={`a = 5
    b = 3
    c = a + b
@@ -55,7 +53,7 @@ function Condicionais() {
       />
       <QuestionCard
         questionTitle="Exercício 3"
-        questionDescription="Considere o código a seguir:"
+        questionDescription="Considere o seguinte código:"
         codeSnippet={`idade = 14
    if idade < 12:
        print('criança')
@@ -78,7 +76,7 @@ function Condicionais() {
       />
       <QuestionCard
         questionTitle="Exercício 4"
-        questionDescription="Considere o código a seguir:"
+        questionDescription="Considere o seguinte código:"
         codeSnippet={`subtraindo = False
    a = 10
    b = 4
@@ -100,7 +98,7 @@ function Condicionais() {
 
       <QuestionCard
         questionTitle="Exercício 5"
-        questionDescription="Considere o código a seguir:"
+        questionDescription="Considere o seguinte código:"
         codeSnippet={`a = 1
    b = 2
    c = 3
