@@ -24,10 +24,28 @@ function Condicionais() {
         explanation="if = se, else = se não, elif = else + if"
         localStorageKey="exercicio1_condicionais"
       />
-
-      {/* Você pode reutilizar o componente para outro exercício: */}
       <QuestionCard
         questionTitle="Exercício 2"
+        questionDescription="Considere o seguinte código:"
+        codeSnippet={`x = 12
+if x < 10:
+    print('O numero é menor que 10.')
+else:
+    print('O número é maior que 10.')`}
+        questionText="Qual será a mensagem impressa no terminal?"
+        options={[
+          "O número é maior que 10.",
+          "O número é menor que 10.",
+          "12",
+          "Não será impresso nada no terminal."
+        ]}
+        correctIndex={0}
+        explanation="Será impresso a mensagem: O número é maior que 10. Como 12 é maior que 10, ele entra no primeiro if."
+        localStorageKey="exercicio2_condicionais"
+      />
+
+      <QuestionCard
+        questionTitle="Exercício 3"
         questionDescription="Considere o seguinte código:"
         codeSnippet={`a = 5
 b = 3
@@ -45,31 +63,9 @@ else:
         ]}
         correctIndex={3}
         explanation="Já que C é menor que 10, será impresso C no terminal, que é o número 8."
-        localStorageKey="exercicio2_condicionais"
-      />
-      <QuestionCard
-        questionTitle="Exercício 3"
-        questionDescription="Considere o seguinte código:"
-        codeSnippet={`idade = 14
-if idade < 12:
-    print('criança')
-elif idade < 20:
-    print('adolescente')
-elif idade < 60:
-    print('adulto')
-else:
-    print('idoso')`}
-        questionText="Qual será a mensagem impressa no terminal?"
-        options={[
-          "criança",
-          "adolescente",
-          "adulto",
-          "idoso"
-        ]}
-        correctIndex={1}
-        explanation="Como a idade informada é maior que 12, ela não entra no primeiro if, e como é menor que 20, entra no segundo. Assim, a mensagem impressa será: Adolescente."
         localStorageKey="exercicio3_condicionais"
       />
+      
       <QuestionCard
         questionTitle="Exercício 4"
         questionDescription="Considere o seguinte código:"
@@ -114,23 +110,28 @@ else:
         explanation="Como a + b = 4, o caso não entrará no primeiro if, e sim no else. Por isso, será impresso 1."
         localStorageKey="exercicio5_condicionais"
       />
+      
       <QuestionCard
         questionTitle="Exercício 6"
         questionDescription="Considere o seguinte código:"
-        codeSnippet={`x = 12
-if x < 10:
-    print('O numero é menor que 10.')
+        codeSnippet={`idade = 14
+if idade < 12:
+    print('criança')
+elif idade < 20:
+    print('adolescente')
+elif idade < 60:
+    print('adulto')
 else:
-    print('O número é maior que 10.')`}
+    print('idoso')`}
         questionText="Qual será a mensagem impressa no terminal?"
         options={[
-          "O número é maior que 10.",
-          "O número é menor que 10.",
-          "12",
-          "Não será impresso nada no terminal."
+          "criança",
+          "adolescente",
+          "adulto",
+          "idoso"
         ]}
-        correctIndex={0}
-        explanation="Será impresso a mensagem: O número é maior que 10. Como 12 é maior que 10, ele entra no primeiro if."
+        correctIndex={1}
+        explanation="Como a idade informada é maior que 12, ela não entra no primeiro if, e como é menor que 20, entra no segundo. Assim, a mensagem impressa será: Adolescente."
         localStorageKey="exercicio6_condicionais"
       />
 
