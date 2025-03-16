@@ -13,7 +13,7 @@ function Variaveis() {
         questionDescription="Considere o seguinte código:"
         codeSnippet={`x = int(1.324)
 print(x)`}
-        questionText="O que esse código imprime no terminal?"
+        questionText="Qual será a mensagem impressa no terminal?"
         options={[
           "1",
           "1.324",
@@ -29,7 +29,7 @@ print(x)`}
         questionDescription="Considere o seguinte código:"
         codeSnippet={`x = float(2)
 print(x)`}
-        questionText="O que esse código imprime no terminal?"
+        questionText="Qual será a mensagem impressa no terminal?"
         options={[
           "2",
           "0.2",
@@ -46,7 +46,7 @@ print(x)`}
         codeSnippet={`nome = 'Pedro'
 print('nome')
 print(nome)`}
-        questionText="O que esse código imprime no terminal?"
+        questionText="Qual será a mensagem impressa no terminal?"
         options={[
           `nome
           Pedro`,
@@ -69,7 +69,7 @@ b = 5
 c = 7
 c = a + b
 print(c)`}
-        questionText="O que esse código imprime no terminal?"
+        questionText="Qual será a mensagem impressa no terminal?"
         options={[
           "8",
           "10",
@@ -87,7 +87,7 @@ print(c)`}
 b = a
 a = 2
 print(a * b)`}
-        questionText="O que esse código imprime no terminal?"
+        questionText="Qual será a mensagem impressa no terminal?"
         options={[
           "4",
           "10",
