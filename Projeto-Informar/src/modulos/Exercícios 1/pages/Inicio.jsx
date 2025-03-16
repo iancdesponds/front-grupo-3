@@ -9,7 +9,7 @@ function InicioExercicio1() {
         Faça uma função "soma()" (USE ESTRITAMENTE ESSE NOME PARA NOMEAR SUA FUNÇÃO) que recebe dois numeros como argumento e retorna a soma deles.
         É possível que tentem passar strings como argumento, nesse caso o código deve retornar False.
       </p>
-      <CodeEditor />
+      <CodeEditor exerciseId={2}/>
     </div>
   );
 }

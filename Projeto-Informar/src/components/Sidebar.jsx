@@ -464,6 +464,27 @@ export default function Sidebar() {
                 </ListItemButton>
               </ListItem>
 
+              <ListItem disablePadding>
+                <ListItemButton
+                  component={NavLink}
+                  to="/Exercicio-1/ex_maximo"
+                  sx={{ pl: 4 }} // indent para destacar subitem
+                  style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                >
+                  <ListItemText primaryTypographyProps={{ fontWeight: 'bold', paddingLeft: '36px', paddingRight: '36px' }} primary="Exercício de Máximo" />
+                </ListItemButton>
+              </ListItem>
+
+              <ListItem disablePadding>
+                <ListItemButton
+                  component={NavLink}
+                  to="/Exercicio-1/ex_area_do_triangulo"
+                  sx={{ pl: 4 }} // indent para destacar subitem
+                  style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                >
+                  <ListItemText primaryTypographyProps={{ fontWeight: 'bold', paddingLeft: '36px', paddingRight: '36px' }} primary="Exercício da Área do Triangulo" />
+                </ListItemButton>
+              </ListItem>
               {/* Adicione mais subitens se quiser */}
             </List>
           </Collapse>

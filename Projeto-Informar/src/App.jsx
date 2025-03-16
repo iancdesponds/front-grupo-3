@@ -31,6 +31,8 @@ import Funcoes from './modulos/Aula-6/pages/Funcoes'
 
 //Páginas de Exercicios-1
 import InicioExercicio1 from './modulos/Exercícios 1/pages/Inicio';
+import Ex_maximo from './modulos/Exercícios 1/pages/Ex_maximo';
+import Ex_area_do_triangulo from './modulos/Exercícios 1/pages/Ex_area_do_triagulo';
 
 import './App.css';
 
@@ -75,6 +77,9 @@ function App() {
 
             {/* Rotas de Exercícios 1*/}
             <Route path="/Exercicio-1/inicio" element={<InicioExercicio1 />} />
+            <Route path="/Exercicio-1/ex_maximo" element={<Ex_maximo />} />
+            <Route path="/Exercicio-1/ex_area_do_triangulo" element={<Ex_area_do_triangulo />} />
+
         
             {/* Adicione outras rotas conforme precisar */}
           </Routes>
