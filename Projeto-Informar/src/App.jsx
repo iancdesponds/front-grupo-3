@@ -40,8 +40,11 @@ import Ex_maximo from './modulos/Exercícios 1/pages/Ex_maximo';
 import Ex_area_do_triangulo from './modulos/Exercícios 1/pages/Ex_area_do_triangulo';
 import Ex_area_do_circulo from './modulos/Exercícios 1/pages/Ex_area_do_circulo';
 import Ex_inverte_string from './modulos/Exercícios 1/pages/Ex_inverte_string';
+import Ex_soma_positivos from './modulos/Exercícios 1/pages/Ex_soma_positivos';
+import Ex_media_negativos from './modulos/Exercícios 2/pages/Ex_media_negativos';
 
 import './App.css';
+
 
 function App() {
   return (
@@ -93,8 +96,11 @@ function App() {
             <Route path="/Exercicio-1/ex_area_do_triangulo" element={<Ex_area_do_triangulo />} />
             <Route path="/Exercicio-1/ex_area_do_circulo" element={<Ex_area_do_circulo />} />
             <Route path="/Exercicio-1/ex_inverte_string" element={<Ex_inverte_string />} />
+            <Route path="/Exercicio-1/ex_soma_positivos" element={<Ex_soma_positivos />} />
 
-        
+            {/* Rotas de Exercícios 2*/}
+            <Route path="/Exercicio-2/ex_media_negativos" element={<Ex_media_negativos />} />
+
             {/* Adicione outras rotas conforme precisar */}
           </Routes>
         </div>

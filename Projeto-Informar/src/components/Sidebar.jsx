@@ -37,8 +37,10 @@ export default function Sidebar() {
     const [openAula5, setOpenAula5] = useState(false);
     // Controla se o sub-menu da Aula-6 está expandido
     const [openAula6, setOpenAula6] = useState(false);
-    // Controla se o sub-menu da Aula-6 está expandido
+    // Controla se o sub-menu da Exercicio-1 está expandido
     const [openExercicio1, setExercicio1] = useState(false);
+    // Controla se o sub-menu da Exercicio-2 está expandido
+    const [openExercicio2, setExercicio2] = useState(false);
 
   const toggleDrawer = () => {
     setOpen(!open);
@@ -65,6 +67,9 @@ export default function Sidebar() {
     const handleExercicio1Click = () => {
     setExercicio1(!openExercicio1);
     };
+    const handleExercicio2Click = () => {
+    setExercicio2(!openExercicio2);
+    };
 
   // Largura da sidebar
   const drawerWidth = 300;
@@ -83,6 +88,7 @@ export default function Sidebar() {
   const isAula5Active = location.pathname.startsWith('/aula-5');
   const isAula6Active = location.pathname.startsWith('/aula-6');
   const isExercicio1Active = location.pathname.startsWith('/Exercicio-1');
+  const isExercicio2Active = location.pathname.startsWith('/Exercicio-2');
 
   return (
     <>
@@ -529,10 +535,50 @@ export default function Sidebar() {
                   <ListItemText primaryTypographyProps={{ fontWeight: 'bold', paddingLeft: '36px', paddingRight: '36px' }} primary="Exercício de Inverter String" />
                 </ListItemButton>
               </ListItem>
+
+              <ListItem disablePadding>
+                <ListItemButton
+                  component={NavLink}
+                  to="/Exercicio-1/ex_soma_positivos"
+                  sx={{ pl: 4 }} // indent para destacar subitem
+                  style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                >
+                  <ListItemText primaryTypographyProps={{ fontWeight: 'bold', paddingLeft: '36px', paddingRight: '36px' }} primary="Exercício de Soma" />
+                </ListItemButton>
+              </ListItem>
               {/* Adicione mais subitens se quiser */}
             </List>
           </Collapse>
 
+          {/* Exercício 2: item que expande subitens */}
+          <ListItem disablePadding>
+            <ListItemButton
+              onClick={handleExercicio2Click}
+              style={isExercicio2Active ? activeStyle : {}}
+            >
+              <ListItemText primaryTypographyProps={{ fontWeight: 'bold', paddingLeft: '36px', paddingRight: '36px' }} primary="Exercícios 2 - Python Intermediário" />
+              {openExercicio2 ? <ExpandLess /> : <ExpandMore />}
+            </ListItemButton>
+          </ListItem>
+
+          {/* Sublista de Exercício 2 */}
+          <Collapse in={openExercicio2} timeout="auto" unmountOnExit>
+            <List component="div" disablePadding>
+              {/* Exercicio de  */}
+              <ListItem disablePadding>
+                <ListItemButton
+                  component={NavLink}
+                  to="/Exercicio-2/ex_media_negativos"
+                  sx={{ pl: 4 }} // indent para destacar subitem
+                  style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                >
+                  <ListItemText primaryTypographyProps={{ fontWeight: 'bold', paddingLeft: '36px', paddingRight: '36px' }} primary="Exercicio de Media Negativos " />
+                </ListItemButton>
+              </ListItem>
+
+              {/* Adicione mais subitens se quiser */}
+            </List>
+          </Collapse>
           {/* Você pode repetir essa lógica para mais aulas/módulos */}
         </List>
       </Drawer>
