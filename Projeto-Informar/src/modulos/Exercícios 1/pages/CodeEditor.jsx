@@ -83,6 +83,7 @@ const CodeEditor = ({ exerciseId }) => {
         value={code}
         onChange={handleEditorChange}
         className="codespace"
+        theme="vs-dark"
       />
       <div className="terminal_buttons_div">
         <button onClick={submitCode} className="button">Rodar</button>

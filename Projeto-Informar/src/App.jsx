@@ -4,6 +4,9 @@ import Sidebar from './components/Sidebar';
 import Home from './modulos/Home';
 import Sobre from './modulos/Sobre';
 
+//Págunas de Admin
+import CreateExercisePage from './modulos/Admin/pages/Create_code_exercise';
+
 // Páginas de Aula-1
 import InicioAula1 from './modulos/Aula-1/pages/inicio';
 import Variaveis from './modulos/Aula-1/pages/Variaveis';
@@ -34,6 +37,7 @@ import InicioExercicio1 from './modulos/Exercícios 1/pages/Ex_soma';
 import Ex_maximo from './modulos/Exercícios 1/pages/Ex_maximo';
 import Ex_area_do_triangulo from './modulos/Exercícios 1/pages/Ex_area_do_triangulo';
 import Ex_area_do_circulo from './modulos/Exercícios 1/pages/Ex_area_do_circulo';
+import Ex_inverte_string from './modulos/Exercícios 1/pages/Ex_inverte_string';
 
 import './App.css';
 
@@ -50,6 +54,9 @@ function App() {
             {/* Rota para Sobre */}
             <Route path="/sobre" element={<Sobre />} />
             
+            {/* Rota para Admin */}
+            <Route path="/admin/exercicios" element={<CreateExercisePage />} />
+
             {/* Rotas de Aula-1 */}
             <Route path="/aula-1/inicio" element={<InicioAula1 />} />
             <Route path="/aula-1/variaveis" element={<Variaveis />} />
@@ -81,6 +88,7 @@ function App() {
             <Route path="/Exercicio-1/ex_maximo" element={<Ex_maximo />} />
             <Route path="/Exercicio-1/ex_area_do_triangulo" element={<Ex_area_do_triangulo />} />
             <Route path="/Exercicio-1/ex_area_do_circulo" element={<Ex_area_do_circulo />} />
+            <Route path="/Exercicio-1/ex_inverte_string" element={<Ex_inverte_string />} />
 
         
             {/* Adicione outras rotas conforme precisar */}

@@ -496,6 +496,17 @@ export default function Sidebar() {
                   <ListItemText primaryTypographyProps={{ fontWeight: 'bold', paddingLeft: '36px', paddingRight: '36px' }} primary="Exercício da Área do Circulo" />
                 </ListItemButton>
               </ListItem>
+
+              <ListItem disablePadding>
+                <ListItemButton
+                  component={NavLink}
+                  to="/Exercicio-1/ex_inverte_string"
+                  sx={{ pl: 4 }} // indent para destacar subitem
+                  style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                >
+                  <ListItemText primaryTypographyProps={{ fontWeight: 'bold', paddingLeft: '36px', paddingRight: '36px' }} primary="Exercício de Inverter String" />
+                </ListItemButton>
+              </ListItem>
               {/* Adicione mais subitens se quiser */}
             </List>
           </Collapse>
