@@ -4,6 +4,7 @@ function InicioAula5() {
   return (
     <div>
       <h1>Aula 5 - Início</h1>
+      <h2>For</h2>
       <p>
       O for pode ser usado em situações semelhantes ao while. Entretanto, não é necessário criar uma variável, cuja veracidade é avaliada  cada iteração do bloco de código, anteriormente, como no while. No caso desse comando, para realizar tarefas repetitivas, com uma quantidade pré-determinada de iterações, é utilizado o comando range junto com a chamada da função for, junto com um contador qualquer.
       </p>
