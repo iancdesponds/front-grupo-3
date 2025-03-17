@@ -1,12 +1,13 @@
-import React from 'react';
-import QuestionCard from '../../../components/QuestionCard';
+import React from "react";
+import QuestionCard from "../../../components/QuestionCard";
 
 function Strings() {
   return (
     <div>
       <h1>Aula 3 - Strings</h1>
       <p>
-      Vamos relembrar do que aprendemos na aula a respeito de strings em Python.
+        Vamos relembrar do que aprendemos na aula a respeito de strings em
+        Python.
       </p>
       <QuestionCard
         questionTitle="Exercício 1"
@@ -27,7 +28,7 @@ r`,
           `string[1]
 string[3]
 string[5]
-string[7]`
+string[7]`,
         ]}
         correctIndex={2}
         explanation="São imprimidos as letras dos índices da string."
@@ -38,15 +39,9 @@ string[7]`
         questionDescription="Considere o seguinte código:"
         codeSnippet={`string = "1" + "1"
 numero = 1 + 1
-print(string,numero)`
-        }
+print(string,numero)`}
         questionText="Qual será a mensagem impressa no terminal?"
-        options={[
-          "11 2",
-          "2 11",
-          "2 2",
-          "Aparece algum erro."
-        ]}
+        options={["11 2", "2 11", "2 2", "Aparece algum erro."]}
         correctIndex={0}
         explanation="Pelo fato de a primeira soma serem de strings, elas não funcionam como números e acabam sendo concatenadas."
         localStorageKey="exercicio2_strings"
@@ -59,12 +54,7 @@ b = "rmar"
 c = a + b
 print(c.index('r'))`}
         questionText="Qual será a mensagem impressa no terminal?"
-        options={[
-          "8",
-          "7",
-          "5",
-          "4"
-        ]}
+        options={["8", "7", "5", "4"]}
         correctIndex={3}
         explanation="Será impresso o índice da primeira aparição da letra r."
         localStorageKey="exercicio3_strings"
@@ -76,12 +66,7 @@ print(c.index('r'))`}
 string_substituida = string.replace('a','x')
 print(string_substituida)`}
         questionText="Qual será a mensagem impressa no terminal?"
-        options={[
-          "progrxmxção",
-          "progrxmxçxo",
-          "progrxmação",
-          "programção"
-        ]}
+        options={["progrxmxção", "progrxmxçxo", "progrxmação", "programção"]}
         correctIndex={0}
         explanation="Serão substituídas todas as ocorrências de a por x (atenção: ã é diferente de a)."
         localStorageKey="exercicio4_strings"
@@ -97,7 +82,7 @@ print(string_invertida)`}
           "projetoinformar",
           "informarprojeto",
           "oinformarprojet",
-          "ramrofniotejorp"
+          "ramrofniotejorp",
         ]}
         correctIndex={1}
         explanation="As strings são fatiadas e então concatenadas."
@@ -110,12 +95,7 @@ print(string_invertida)`}
 contagem = texto.count('d')
 print(contagem)`}
         questionText="Qual será a mensagem impressa no terminal?"
-        options={[
-          "2",
-          "3",
-          "4",
-          "5"
-        ]}
+        options={["2", "3", "4", "5"]}
         correctIndex={2}
         explanation="O programa conta quantas vezes a letra d aparece no texto."
         localStorageKey="exercicio6_strings"
@@ -128,12 +108,7 @@ checagem = Informar in texto
 checagem2 = código in texto
 print(checagem,checagem2)`}
         questionText="Qual será a mensagem impressa no terminal?"
-        options={[
-          "True True",
-          "False False",
-          "False True",
-          "True False"
-        ]}
+        options={["True True", "False False", "False True", "True False"]}
         correctIndex={3}
         explanation="O código checa se as palavras 'Informar' e 'código' estão presentes no texto."
         localStorageKey="exercicio7_strings"
@@ -150,7 +125,7 @@ print(maiusculas, minusculas)`}
           "projeto informar PROJETO INFORMAR",
           "PROJETO INFORMAR projeto informar",
           "PROJETO INFORMAR PROJETO INFORMAR",
-          "projeto informar projeto informar"
+          "projeto informar projeto informar",
         ]}
         correctIndex={1}
         explanation="A função upper() serve para deixar as letras maiúsculas, enquanto a lower() serve para deixar minúsculas."
@@ -169,15 +144,13 @@ print(dividida)`}
           "['Que', 'a', 'tristeza', 'te', 'convença', 'Que', 'a', 'saudade', 'não', 'compensa', 'E', 'que', 'a', 'ausência', 'não', 'dá', 'paz']",
           "'Que', 'a', 'tristeza', 'te', 'convença', 'Que', 'a', 'saudade', 'não', 'compensa', 'E', 'que', 'a', 'ausência', 'não', 'dá', 'paz'",
           "dividida",
-          "['Que', 'a', 'tristeza', 'te', 'convença'] ['Que', 'a', 'saudade', 'não', 'compensa'] ['E', 'que', 'a', 'ausência', 'não', 'dá', 'paz']"
+          "['Que', 'a', 'tristeza', 'te', 'convença'] ['Que', 'a', 'saudade', 'não', 'compensa'] ['E', 'que', 'a', 'ausência', 'não', 'dá', 'paz']",
         ]}
         correctIndex={0}
         explanation="A função split(argumento) divide os termos entre o argumento formando uma lista (se não houver argumento a string é dividida por espaços)."
         localStorageKey="exercicio9_strings"
       />
-      
     </div>
-    
   );
 }
 

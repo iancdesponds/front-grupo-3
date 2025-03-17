@@ -1,12 +1,13 @@
-import React from 'react';
-import QuestionCard from '../../../components/QuestionCard';
+import React from "react";
+import QuestionCard from "../../../components/QuestionCard";
 
 function Condicionais() {
   return (
     <div>
       <h1>Aula 2 - Condicionais</h1>
       <p>
-      Vamos relembrar do que aprendemos na aula a respeito de condicionais em Python.
+        Vamos relembrar do que aprendemos na aula a respeito de condicionais em
+        Python.
       </p>
 
       <QuestionCard
@@ -18,7 +19,7 @@ function Condicionais() {
           "se, se não",
           "se não, se",
           "enquanto, para",
-          "para, enquanto"
+          "para, enquanto",
         ]}
         correctIndex={0}
         explanation="if = se, else = se não, elif = else + if"
@@ -37,7 +38,7 @@ else:
           "O número é maior que 10.",
           "O número é menor que 10.",
           "12",
-          "Não será impresso nada no terminal."
+          "Não será impresso nada no terminal.",
         ]}
         correctIndex={0}
         explanation="Será impresso a mensagem: O número é maior que 10. Como 12 é maior que 10, ele entra no primeiro if."
@@ -55,17 +56,12 @@ if c > 10:
 else:
     print(c)`}
         questionText="Qual será a mensagem impressa no terminal?"
-        options={[
-          "Não será impresso nada no terminal.",
-          "5",
-          "3",
-          "8"
-        ]}
+        options={["Não será impresso nada no terminal.", "5", "3", "8"]}
         correctIndex={3}
         explanation="Já que C é menor que 10, será impresso C no terminal, que é o número 8."
         localStorageKey="exercicio3_condicionais"
       />
-      
+
       <QuestionCard
         questionTitle="Exercício 4"
         questionDescription="Considere o seguinte código:"
@@ -77,16 +73,11 @@ if subtraindo:
     print(c)
 `}
         questionText="Qual será a mensagem impressa no terminal?"
-        options={[
-          "6",
-          "4",
-          "Não será impresso nada no terminal.",
-          "14"
-        ]}
+        options={["6", "4", "Não será impresso nada no terminal.", "14"]}
         correctIndex={2}
         explanation="Como a função subtraindo = False, a função não será exercutada. Ou seja, nada será impresso. "
         localStorageKey="exercicio4_condicionais"
-      />      
+      />
 
       <QuestionCard
         questionTitle="Exercício 5"
@@ -100,17 +91,12 @@ else:
     print(c - b)
 `}
         questionText="Qual será a mensagem impressa no terminal?"
-        options={[
-          "1",
-          "5",
-          "Não será impresso nada no terminal.",
-          "4"
-        ]}
+        options={["1", "5", "Não será impresso nada no terminal.", "4"]}
         correctIndex={0}
         explanation="Como a + b = 4, o caso não entrará no primeiro if, e sim no else. Por isso, será impresso 1."
         localStorageKey="exercicio5_condicionais"
       />
-      
+
       <QuestionCard
         questionTitle="Exercício 6"
         questionDescription="Considere o seguinte código:"
@@ -124,17 +110,11 @@ elif idade < 60:
 else:
     print('idoso')`}
         questionText="Qual será a mensagem impressa no terminal?"
-        options={[
-          "criança",
-          "adolescente",
-          "adulto",
-          "idoso"
-        ]}
+        options={["criança", "adolescente", "adulto", "idoso"]}
         correctIndex={1}
         explanation="Como a idade informada é maior que 12, ela não entra no primeiro if, e como é menor que 20, entra no segundo. Assim, a mensagem impressa será: Adolescente."
         localStorageKey="exercicio6_condicionais"
       />
-
     </div>
   );
 }

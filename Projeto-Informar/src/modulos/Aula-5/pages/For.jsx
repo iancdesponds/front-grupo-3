@@ -1,24 +1,19 @@
-import React from 'react';
-import QuestionCard from '../../../components/QuestionCard';
+import React from "react";
+import QuestionCard from "../../../components/QuestionCard";
 
 function For() {
   return (
     <div>
       <h1>Aula 5 - for</h1>
       <p>
-      Vamos relembrar do que aprendemos na aula a respeito de for em Python.
+        Vamos relembrar do que aprendemos na aula a respeito de for em Python.
       </p>
       <QuestionCard
         questionTitle="Exercício 1"
         questionDescription=""
         codeSnippet={``}
         questionText="Qual é a tradução para for?"
-        options={[
-          "enquanto",
-          "para",
-          "se",
-          "se não"
-        ]}
+        options={["enquanto", "para", "se", "se não"]}
         correctIndex={1}
         explanation=""
         localStorageKey="exercicio1_for"
@@ -28,12 +23,7 @@ function For() {
         questionDescription=""
         codeSnippet={``}
         questionText="Qual é a tradução para range?"
-        options={[
-          "se não",
-          "enquanto",
-          "se",
-          "alcance"
-        ]}
+        options={["se não", "enquanto", "se", "alcance"]}
         correctIndex={3}
         explanation=""
         localStorageKey="exercicio2_for"
@@ -53,7 +43,7 @@ function For() {
 1
 2
 3`,
-          "[0, 1, 2, 3]"
+          "[0, 1, 2, 3]",
         ]}
         correctIndex={0}
         explanation="O for imprime i no alcance de 0 até 3 (3 não é incluso)."
@@ -74,7 +64,7 @@ Joao`,
           `'Pedro'
 'Maria'
 'Joao'`,
-          `O programa não imprime nada.`
+          `O programa não imprime nada.`,
         ]}
         correctIndex={0}
         explanation="O for percorre todos os elementos dentro da lista, imprimindo um de cada vez."
@@ -99,7 +89,7 @@ Joao`,
           `4
 5
 6`,
-          `[3,4,5,6]`
+          `[3,4,5,6]`,
         ]}
         correctIndex={1}
         explanation="O for imprime i no alcance de 3 até 7 (7 não é incluso)."
@@ -119,7 +109,7 @@ print(soma)`}
 3`,
           "3",
           "4",
-          "6"
+          "6",
         ]}
         correctIndex={3}
         explanation="O código soma 1, 2 e 3 à variável soma."
@@ -135,7 +125,7 @@ print(soma)`}
           "Imprime os números de 5 a 1.",
           "Imprime os números de 5 a 2.",
           "Imprime os números de 1 a 5.",
-          "Não imprime nada."
+          "Não imprime nada.",
         ]}
         correctIndex={1}
         explanation="O terceiro valor (-1) é o step (traduz para passo), que determina o intervalo entre os números gerados, fazendo a contagem decrescente."

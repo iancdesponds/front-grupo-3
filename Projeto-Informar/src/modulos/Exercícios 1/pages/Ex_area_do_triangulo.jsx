@@ -1,6 +1,6 @@
-import React from 'react';
-import CodeEditor from './CodeEditor';
-import { MathJax, MathJaxContext } from 'better-react-mathjax';
+import React from "react";
+import CodeEditor from "./CodeEditor";
+import { MathJax, MathJaxContext } from "better-react-mathjax";
 
 function Ex_area_do_triangulo() {
   return (
@@ -8,11 +8,14 @@ function Ex_area_do_triangulo() {
       <div>
         <h1>Exercício 1 - Função Área do Triângulo</h1>
         <p>
-          Implemente a função <code>calcula_area_triangulo</code> que recebe a base e a altura de um triângulo e retorna a sua área.
+          Implemente a função <code>calcula_area_triangulo</code> que recebe a
+          base e a altura de um triângulo e retorna a sua área.
         </p>
         <p>A fórmula para calcular a área de um triângulo é:</p>
         <MathJax>
-          {"\\[ \\text{Área} = \\frac{\\text{base} \\times \\text{altura}}{2} \\]"}
+          {
+            "\\[ \\text{Área} = \\frac{\\text{base} \\times \\text{altura}}{2} \\]"
+          }
         </MathJax>
         <CodeEditor exerciseId={4} />
       </div>

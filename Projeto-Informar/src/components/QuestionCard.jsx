@@ -9,7 +9,7 @@ function QuestionCard({
   options,
   correctIndex,
   explanation,
-  localStorageKey
+  localStorageKey,
 }) {
   const [selectedOption, setSelectedOption] = useState(null);
   const [submitted, setSubmitted] = useState(false);
@@ -80,7 +80,7 @@ function QuestionCard({
   };
 
   // Função para definir a classe da letra
-const getAnswerLetterClass = (index) => {
+  const getAnswerLetterClass = (index) => {
     // Antes de enviar:
     if (!submitted) {
       // Se ainda não enviou, apenas destaque se for a opção selecionada
@@ -102,7 +102,6 @@ const getAnswerLetterClass = (index) => {
       }
     }
   };
-  
 
   // Ícone de certo/errado apenas para a opção escolhida, após envio
   const getAnswerIcon = (index) => {
@@ -140,7 +139,9 @@ const getAnswerLetterClass = (index) => {
             onClick={() => handleSelectOption(index)}
           >
             {/* Letra da alternativa com fundo colorido */}
-            <span className={getAnswerLetterClass(index)}>{getLetter(index)}</span>
+            <span className={getAnswerLetterClass(index)}>
+              {getLetter(index)}
+            </span>
 
             {/* Ícone (só aparece na escolhida, após envio) */}
             {getAnswerIcon(index)}
@@ -163,14 +164,14 @@ const getAnswerLetterClass = (index) => {
       {/* Feedback e explicação */}
       {submitted && (
         <div
-          className={`question-feedback ${
-            isCorrect ? "correct" : "incorrect"
-          }`}
+          className={`question-feedback ${isCorrect ? "correct" : "incorrect"}`}
         >
           {isCorrect ? (
             <h2 style={{ color: "green" }}>Você acertou! Parabéns.</h2>
           ) : (
-            <h2 style={{ color: "red" }}>Resposta incorreta. Tente novamente!</h2>
+            <h2 style={{ color: "red" }}>
+              Resposta incorreta. Tente novamente!
+            </h2>
           )}
           <p>{explanation}</p>
           <button className="btn-refazer" onClick={handleRetry}>

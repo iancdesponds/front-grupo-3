@@ -1,12 +1,13 @@
-import React from 'react';
-import QuestionCard from '../../../components/QuestionCard';
+import React from "react";
+import QuestionCard from "../../../components/QuestionCard";
 
 function Listas() {
   return (
     <div>
       <h1>Aula 3 - Listas</h1>
       <p>
-      Vamos relembrar do que aprendemos na aula a respeito de listas em Python.
+        Vamos relembrar do que aprendemos na aula a respeito de listas em
+        Python.
       </p>
       <QuestionCard
         questionTitle="Exercício 1"
@@ -14,12 +15,7 @@ function Listas() {
         codeSnippet={`lista_exemplo = ['a','b','c','d']
 print(1)`}
         questionText="Qual será a mensagem impressa no terminal?"
-        options={[
-          "a",
-          "b",
-          "c",
-          "d"
-        ]}
+        options={["a", "b", "c", "d"]}
         correctIndex={1}
         explanation="A contagem em Python é iniciada em 0, portanto 1 equivale ao segundo elemento da lista."
         localStorageKey="exercicio1_listas"
@@ -31,12 +27,7 @@ print(1)`}
 numero_elementos = len(lista_exemplo)
 print(numero_elementos)`}
         questionText="Qual será a mensagem impressa no terminal?"
-        options={[
-          "4",
-          "3",
-          "[1,2,3,4,5]",
-          "5"
-        ]}
+        options={["4", "3", "[1,2,3,4,5]", "5"]}
         correctIndex={3}
         explanation="A função len() retorna o número de elementos dentro de uma lista."
         localStorageKey="exercicio2_listas"
@@ -48,12 +39,7 @@ print(numero_elementos)`}
 indice_nome = nomes.index('Maria')
 print(indice_nome)`}
         questionText="Qual será a mensagem impressa no terminal?"
-        options={[
-          "0",
-          "1",
-          "2",
-          "3"
-        ]}
+        options={["0", "1", "2", "3"]}
         correctIndex={1}
         explanation="A função index() retorna o índice de um elemento dentro de uma lista."
         localStorageKey="exercicio3_listas"
@@ -69,7 +55,7 @@ print(nomes)`}
           "['Pedro','Maria','Arthur']",
           "['Sofia','Pedro','Maria','Arthur']",
           "['Pedro','Maria','Arthur', 'Sofia']",
-          "nomes"
+          "nomes",
         ]}
         correctIndex={2}
         explanation="A função append() adiciona um elemento dentro de uma lista."
@@ -86,7 +72,7 @@ print(nomes)`}
           "['Pedro','Maria','Arthur']",
           "['Maria','Arthur']",
           "['Pedro','Arthur']",
-          "['Pedro','Maria']"
+          "['Pedro','Maria']",
         ]}
         correctIndex={2}
         explanation="A função pop() remove o elemento da lista do índice indicado."
@@ -109,7 +95,7 @@ True`,
           `False
 False`,
           `True
-True`
+True`,
         ]}
         correctIndex={0}
         explanation="'in' traduz para 'em', ou seja, a é True(verdadeiro) enquanto b é False(falso) porque '4' é uma string e não um inteiro."

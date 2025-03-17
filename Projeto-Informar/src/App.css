@@ -25,6 +25,7 @@ h2 {
 p {
   font-size: 1.5rem;
   margin-bottom: 20px;
+  text-align: justify;
 }
 
 .container {
@@ -36,15 +37,18 @@ p {
 
 .codespace {
   width: 100%;
-  height: 300px;
-  padding: 10px;
+  min-height: 300px;
+  max-height: 700px; /* Define um limite máximo */
+  padding: 5px;
   font-size: 1rem;
   font-family: 'Courier New', Courier, monospace;
   border: 2px solid #ccc;
   border-radius: 5px;
   background-color: #f4f4f4;
   resize: vertical;
+  margin-bottom: 10px;
 }
+
 
 .terminal_buttons_div {
   display: flex;
@@ -55,10 +59,11 @@ p {
 .button {
   display: block;
   width: fit-content;
-  padding: 12px;
-  font-size: 1.2rem;
+  height: 40px;
+  padding: 5px;
+  font-size: 1.1rem;
   color: white;
-  background-color: #4CAF50;
+  background-color: rgb(221, 8, 8);
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -67,7 +72,7 @@ p {
 }
 
 .button:hover {
-  background-color: #45a049;
+  background-color: black;
 }
 
 /* Estilo para o painel de resultados */

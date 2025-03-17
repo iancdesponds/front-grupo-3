@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import React, { useState } from "react";
+import { NavLink, useLocation } from "react-router-dom";
 import {
   Drawer,
   IconButton,
@@ -8,39 +8,39 @@ import {
   ListItemButton,
   ListItemText,
   Collapse,
-  Box
-} from '@mui/material';
+  Box,
+} from "@mui/material";
 
 import {
   Menu as MenuIcon,
   ExpandLess,
   ExpandMore,
-  Close as CloseIcon
-} from '@mui/icons-material';
+  Close as CloseIcon,
+} from "@mui/icons-material";
 
-import Logo from '../assets/logo.png';
+import Logo from "../assets/Logo_gas.png";
 
-import '../App.css';
+import "../App.css";
 
 export default function Sidebar() {
   // Controla se o Drawer está aberto/fechado
   const [open, setOpen] = useState(true);
   // Controla se o sub-menu da Aula-1 está expandido
   const [openAula1, setOpenAula1] = useState(false);
-    // Controla se o sub-menu da Aula-2 está expandido
-    const [openAula2, setOpenAula2] = useState(false);
-    // Controla se o sub-menu da Aula-3 está expandido
-    const [openAula3, setOpenAula3] = useState(false);
-    // Controla se o sub-menu da Aula-4 está expandido
-    const [openAula4, setOpenAula4] = useState(false);
-    // Controla se o sub-menu da Aula-5 está expandido
-    const [openAula5, setOpenAula5] = useState(false);
-    // Controla se o sub-menu da Aula-6 está expandido
-    const [openAula6, setOpenAula6] = useState(false);
-    // Controla se o sub-menu da Exercicio-1 está expandido
-    const [openExercicio1, setExercicio1] = useState(false);
-    // Controla se o sub-menu da Exercicio-2 está expandido
-    const [openExercicio2, setExercicio2] = useState(false);
+  // Controla se o sub-menu da Aula-2 está expandido
+  const [openAula2, setOpenAula2] = useState(false);
+  // Controla se o sub-menu da Aula-3 está expandido
+  const [openAula3, setOpenAula3] = useState(false);
+  // Controla se o sub-menu da Aula-4 está expandido
+  const [openAula4, setOpenAula4] = useState(false);
+  // Controla se o sub-menu da Aula-5 está expandido
+  const [openAula5, setOpenAula5] = useState(false);
+  // Controla se o sub-menu da Aula-6 está expandido
+  const [openAula6, setOpenAula6] = useState(false);
+  // Controla se o sub-menu da Exercicio-1 está expandido
+  const [openExercicio1, setExercicio1] = useState(false);
+  // Controla se o sub-menu da Exercicio-2 está expandido
+  const [openExercicio2, setExercicio2] = useState(false);
 
   const toggleDrawer = () => {
     setOpen(!open);
@@ -49,67 +49,67 @@ export default function Sidebar() {
   const handleAula1Click = () => {
     setOpenAula1(!openAula1);
   };
-    const handleAula2Click = () => {
+  const handleAula2Click = () => {
     setOpenAula2(!openAula2);
-    };
-    const handleAula3Click = () => {
+  };
+  const handleAula3Click = () => {
     setOpenAula3(!openAula3);
-    };
-    const handleAula4Click = () => {
+  };
+  const handleAula4Click = () => {
     setOpenAula4(!openAula4);
-    };
-    const handleAula5Click = () => {
+  };
+  const handleAula5Click = () => {
     setOpenAula5(!openAula5);
-    };
-    const handleAula6Click = () => {
+  };
+  const handleAula6Click = () => {
     setOpenAula6(!openAula6);
-    };
-    const handleExercicio1Click = () => {
+  };
+  const handleExercicio1Click = () => {
     setExercicio1(!openExercicio1);
-    };
-    const handleExercicio2Click = () => {
+  };
+  const handleExercicio2Click = () => {
     setExercicio2(!openExercicio2);
-    };
+  };
 
   // Largura da sidebar
   const drawerWidth = 300;
 
   // Estilo para o link ativo (vermelho)
   const activeStyle = {
-    color: 'red',
+    color: "red",
   };
 
   // Verifica se o pathname atual começa com a rota da aula
   const location = useLocation();
-  const isAula1Active = location.pathname.startsWith('/aula-1');
-  const isAula2Active = location.pathname.startsWith('/aula-2');
-  const isAula3Active = location.pathname.startsWith('/aula-3');
-  const isAula4Active = location.pathname.startsWith('/aula-4');
-  const isAula5Active = location.pathname.startsWith('/aula-5');
-  const isAula6Active = location.pathname.startsWith('/aula-6');
-  const isExercicio1Active = location.pathname.startsWith('/Exercicio-1');
-  const isExercicio2Active = location.pathname.startsWith('/Exercicio-2');
+  const isAula1Active = location.pathname.startsWith("/aula-1");
+  const isAula2Active = location.pathname.startsWith("/aula-2");
+  const isAula3Active = location.pathname.startsWith("/aula-3");
+  const isAula4Active = location.pathname.startsWith("/aula-4");
+  const isAula5Active = location.pathname.startsWith("/aula-5");
+  const isAula6Active = location.pathname.startsWith("/aula-6");
+  const isExercicio1Active = location.pathname.startsWith("/Exercicio-1");
+  const isExercicio2Active = location.pathname.startsWith("/Exercicio-2");
 
   return (
     <>
-    {/** 
-       * TOPO FIXO: Logo + Botão 
+      {/**
+       * TOPO FIXO: Logo + Botão
        * Fica sempre no canto superior esquerdo
        */}
       <Box
         sx={{
-          display: 'flex',
-          alignItems: 'center',
-          height: '100px',
+          display: "flex",
+          alignItems: "center",
+          height: "100px",
           // Mantém fixo no topo
-          position: 'fixed',
+          position: "fixed",
           top: 0,
           left: 0,
           right: 0,
           zIndex: (theme) => theme.zIndex.drawer + 1,
           // Aparência do topo
-          backgroundColor: '#fff',
-          borderBottom: '1px solid #ccc',
+          backgroundColor: "#fff",
+          borderBottom: "1px solid #ccc",
           px: 2, // padding horizontal
         }}
       >
@@ -120,18 +120,18 @@ export default function Sidebar() {
 
         {/* Logo ou título */}
         <Box component={NavLink} to="/">
-            <Box
-                component="img"
-                src={Logo}
-                alt="Informar GAS"
-                sx={{ height: '80px' }}
-            />
+          <Box
+            component="img"
+            src={Logo}
+            alt="Informar GAS"
+            sx={{ height: "80px" }}
+          />
         </Box>
         {/* Ou poderia usar um <h1>Informar GAS</h1> ao invés de imagem */}
       </Box>
 
       {/**
-       * DRAWER (sidebar) 
+       * DRAWER (sidebar)
        * Fica "por baixo" do topo fixo, começando em top: 64px
        */}
       <Drawer
@@ -141,21 +141,20 @@ export default function Sidebar() {
         // Ajusta zIndex para ficar atrás do top bar
         sx={{
           zIndex: (theme) => theme.zIndex.drawer,
-          '& .MuiDrawer-paper': {
+          "& .MuiDrawer-paper": {
             // Deixa a sidebar logo abaixo do top bar
-            top: '100px',
+            top: "100px",
             // Ajusta a altura para ocupar o resto da tela
-            height: 'calc(100% - 100px)',
+            height: "calc(100% - 100px)",
             // Largura fixa
             width: 300,
             // Se quiser transição suave no abrir/fechar:
-            transition: 'transform 0.3s ease-out',
-            boxSizing: 'border-box',
-            overflowX: 'hidden',
+            transition: "transform 0.3s ease-out",
+            boxSizing: "border-box",
+            overflowX: "hidden",
           },
         }}
       >
-
         {/* Lista de itens do menu */}
         <List>
           {/* HOME */}
@@ -165,7 +164,14 @@ export default function Sidebar() {
               to="/"
               style={({ isActive }) => (isActive ? activeStyle : undefined)}
             >
-              <ListItemText primaryTypographyProps={{ fontWeight: 'bold', paddingLeft: '36px', paddingRight: '36px' }} primary="Home" />
+              <ListItemText
+                primaryTypographyProps={{
+                  fontWeight: "bold",
+                  paddingLeft: "36px",
+                  paddingRight: "36px",
+                }}
+                primary="Home"
+              />
             </ListItemButton>
           </ListItem>
 
@@ -176,7 +182,14 @@ export default function Sidebar() {
               to="/sobre"
               style={({ isActive }) => (isActive ? activeStyle : undefined)}
             >
-              <ListItemText primaryTypographyProps={{ fontWeight: 'bold', paddingLeft: '36px', paddingRight: '36px' }} primary="Sobre" />
+              <ListItemText
+                primaryTypographyProps={{
+                  fontWeight: "bold",
+                  paddingLeft: "36px",
+                  paddingRight: "36px",
+                }}
+                primary="Sobre"
+              />
             </ListItemButton>
           </ListItem>
 
@@ -186,7 +199,14 @@ export default function Sidebar() {
               onClick={handleAula1Click}
               style={isAula1Active ? activeStyle : {}}
             >
-              <ListItemText primaryTypographyProps={{ fontWeight: 'bold', paddingLeft: '36px', paddingRight: '36px' }} primary="Aula 1 - Operadores e Variáveis" />
+              <ListItemText
+                primaryTypographyProps={{
+                  fontWeight: "bold",
+                  paddingLeft: "36px",
+                  paddingRight: "36px",
+                }}
+                primary="Aula 1 - Operadores e Variáveis"
+              />
               {openAula1 ? <ExpandLess /> : <ExpandMore />}
             </ListItemButton>
           </ListItem>
@@ -202,7 +222,14 @@ export default function Sidebar() {
                   sx={{ pl: 4 }} // indent para destacar subitem
                   style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 >
-                  <ListItemText primaryTypographyProps={{ fontWeight: 'bold', paddingLeft: '36px', paddingRight: '36px' }} primary="Início" />
+                  <ListItemText
+                    primaryTypographyProps={{
+                      fontWeight: "bold",
+                      paddingLeft: "36px",
+                      paddingRight: "36px",
+                    }}
+                    primary="Início"
+                  />
                 </ListItemButton>
               </ListItem>
 
@@ -214,7 +241,14 @@ export default function Sidebar() {
                   sx={{ pl: 4 }}
                   style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 >
-                  <ListItemText primaryTypographyProps={{ fontWeight: 'bold', paddingLeft: '36px', paddingRight: '36px' }} primary="Operações" />
+                  <ListItemText
+                    primaryTypographyProps={{
+                      fontWeight: "bold",
+                      paddingLeft: "36px",
+                      paddingRight: "36px",
+                    }}
+                    primary="Operações"
+                  />
                 </ListItemButton>
               </ListItem>
 
@@ -226,7 +260,14 @@ export default function Sidebar() {
                   sx={{ pl: 4 }} // indent para destacar subitem
                   style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 >
-                  <ListItemText primaryTypographyProps={{ fontWeight: 'bold', paddingLeft: '36px', paddingRight: '36px' }} primary="Variáveis" />
+                  <ListItemText
+                    primaryTypographyProps={{
+                      fontWeight: "bold",
+                      paddingLeft: "36px",
+                      paddingRight: "36px",
+                    }}
+                    primary="Variáveis"
+                  />
                 </ListItemButton>
               </ListItem>
 
@@ -238,7 +279,14 @@ export default function Sidebar() {
                   sx={{ pl: 4 }}
                   style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 >
-                  <ListItemText primaryTypographyProps={{ fontWeight: 'bold', paddingLeft: '36px', paddingRight: '36px' }} primary="Terminal" />
+                  <ListItemText
+                    primaryTypographyProps={{
+                      fontWeight: "bold",
+                      paddingLeft: "36px",
+                      paddingRight: "36px",
+                    }}
+                    primary="Terminal"
+                  />
                 </ListItemButton>
               </ListItem>
 
@@ -252,7 +300,14 @@ export default function Sidebar() {
               onClick={handleAula2Click}
               style={isAula2Active ? activeStyle : {}}
             >
-              <ListItemText primaryTypographyProps={{ fontWeight: 'bold', paddingLeft: '36px', paddingRight: '36px' }} primary="Aula 2 - Condicionais" />
+              <ListItemText
+                primaryTypographyProps={{
+                  fontWeight: "bold",
+                  paddingLeft: "36px",
+                  paddingRight: "36px",
+                }}
+                primary="Aula 2 - Condicionais"
+              />
               {openAula2 ? <ExpandLess /> : <ExpandMore />}
             </ListItemButton>
           </ListItem>
@@ -268,7 +323,14 @@ export default function Sidebar() {
                   sx={{ pl: 4 }} // indent para destacar subitem
                   style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 >
-                  <ListItemText primaryTypographyProps={{ fontWeight: 'bold', paddingLeft: '36px', paddingRight: '36px' }} primary="Início" />
+                  <ListItemText
+                    primaryTypographyProps={{
+                      fontWeight: "bold",
+                      paddingLeft: "36px",
+                      paddingRight: "36px",
+                    }}
+                    primary="Início"
+                  />
                 </ListItemButton>
               </ListItem>
               {/* Condicionais */}
@@ -279,13 +341,18 @@ export default function Sidebar() {
                   sx={{ pl: 4 }} // indent para destacar subitem
                   style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 >
-                  <ListItemText primaryTypographyProps={{ fontWeight: 'bold', paddingLeft: '36px', paddingRight: '36px' }} primary="Condicionais" />
+                  <ListItemText
+                    primaryTypographyProps={{
+                      fontWeight: "bold",
+                      paddingLeft: "36px",
+                      paddingRight: "36px",
+                    }}
+                    primary="Condicionais"
+                  />
                 </ListItemButton>
               </ListItem>
-              
 
               {/* Adicione mais subitens se quiser */}
-              
             </List>
           </Collapse>
 
@@ -295,7 +362,14 @@ export default function Sidebar() {
               onClick={handleAula3Click}
               style={isAula3Active ? activeStyle : {}}
             >
-              <ListItemText primaryTypographyProps={{ fontWeight: 'bold', paddingLeft: '36px', paddingRight: '36px' }} primary="Aula 3 - Listas e Strings" />
+              <ListItemText
+                primaryTypographyProps={{
+                  fontWeight: "bold",
+                  paddingLeft: "36px",
+                  paddingRight: "36px",
+                }}
+                primary="Aula 3 - Listas e Strings"
+              />
               {openAula3 ? <ExpandLess /> : <ExpandMore />}
             </ListItemButton>
           </ListItem>
@@ -311,7 +385,14 @@ export default function Sidebar() {
                   sx={{ pl: 4 }} // indent para destacar subitem
                   style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 >
-                  <ListItemText primaryTypographyProps={{ fontWeight: 'bold', paddingLeft: '36px', paddingRight: '36px' }} primary="Início" />
+                  <ListItemText
+                    primaryTypographyProps={{
+                      fontWeight: "bold",
+                      paddingLeft: "36px",
+                      paddingRight: "36px",
+                    }}
+                    primary="Início"
+                  />
                 </ListItemButton>
               </ListItem>
 
@@ -323,7 +404,14 @@ export default function Sidebar() {
                   sx={{ pl: 4 }}
                   style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 >
-                  <ListItemText primaryTypographyProps={{ fontWeight: 'bold', paddingLeft: '36px', paddingRight: '36px' }} primary="Listas" />
+                  <ListItemText
+                    primaryTypographyProps={{
+                      fontWeight: "bold",
+                      paddingLeft: "36px",
+                      paddingRight: "36px",
+                    }}
+                    primary="Listas"
+                  />
                 </ListItemButton>
               </ListItem>
 
@@ -335,10 +423,16 @@ export default function Sidebar() {
                   sx={{ pl: 4 }}
                   style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 >
-                  <ListItemText primaryTypographyProps={{ fontWeight: 'bold', paddingLeft: '36px', paddingRight: '36px' }} primary="Strings" />
+                  <ListItemText
+                    primaryTypographyProps={{
+                      fontWeight: "bold",
+                      paddingLeft: "36px",
+                      paddingRight: "36px",
+                    }}
+                    primary="Strings"
+                  />
                 </ListItemButton>
               </ListItem>
-              
 
               {/* Adicione mais subitens se quiser */}
             </List>
@@ -350,7 +444,14 @@ export default function Sidebar() {
               onClick={handleAula4Click}
               style={isAula4Active ? activeStyle : {}}
             >
-              <ListItemText primaryTypographyProps={{ fontWeight: 'bold', paddingLeft: '36px', paddingRight: '36px' }} primary="Aula 4 - While" />
+              <ListItemText
+                primaryTypographyProps={{
+                  fontWeight: "bold",
+                  paddingLeft: "36px",
+                  paddingRight: "36px",
+                }}
+                primary="Aula 4 - While"
+              />
               {openAula4 ? <ExpandLess /> : <ExpandMore />}
             </ListItemButton>
           </ListItem>
@@ -366,7 +467,14 @@ export default function Sidebar() {
                   sx={{ pl: 4 }} // indent para destacar subitem
                   style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 >
-                  <ListItemText primaryTypographyProps={{ fontWeight: 'bold', paddingLeft: '36px', paddingRight: '36px' }} primary="Início" />
+                  <ListItemText
+                    primaryTypographyProps={{
+                      fontWeight: "bold",
+                      paddingLeft: "36px",
+                      paddingRight: "36px",
+                    }}
+                    primary="Início"
+                  />
                 </ListItemButton>
               </ListItem>
               {/* While */}
@@ -377,7 +485,14 @@ export default function Sidebar() {
                   sx={{ pl: 4 }} // indent para destacar subitem
                   style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 >
-                  <ListItemText primaryTypographyProps={{ fontWeight: 'bold', paddingLeft: '36px', paddingRight: '36px' }} primary="While" />
+                  <ListItemText
+                    primaryTypographyProps={{
+                      fontWeight: "bold",
+                      paddingLeft: "36px",
+                      paddingRight: "36px",
+                    }}
+                    primary="While"
+                  />
                 </ListItemButton>
               </ListItem>
 
@@ -390,7 +505,14 @@ export default function Sidebar() {
               onClick={handleAula5Click}
               style={isAula5Active ? activeStyle : {}}
             >
-              <ListItemText primaryTypographyProps={{ fontWeight: 'bold', paddingLeft: '36px', paddingRight: '36px' }} primary="Aula 5 - For/Range" />
+              <ListItemText
+                primaryTypographyProps={{
+                  fontWeight: "bold",
+                  paddingLeft: "36px",
+                  paddingRight: "36px",
+                }}
+                primary="Aula 5 - For/Range"
+              />
               {openAula5 ? <ExpandLess /> : <ExpandMore />}
             </ListItemButton>
           </ListItem>
@@ -406,7 +528,14 @@ export default function Sidebar() {
                   sx={{ pl: 4 }} // indent para destacar subitem
                   style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 >
-                  <ListItemText primaryTypographyProps={{ fontWeight: 'bold', paddingLeft: '36px', paddingRight: '36px' }} primary="Início" />
+                  <ListItemText
+                    primaryTypographyProps={{
+                      fontWeight: "bold",
+                      paddingLeft: "36px",
+                      paddingRight: "36px",
+                    }}
+                    primary="Início"
+                  />
                 </ListItemButton>
               </ListItem>
               {/* For */}
@@ -417,7 +546,14 @@ export default function Sidebar() {
                   sx={{ pl: 4 }} // indent para destacar subitem
                   style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 >
-                  <ListItemText primaryTypographyProps={{ fontWeight: 'bold', paddingLeft: '36px', paddingRight: '36px' }} primary="For" />
+                  <ListItemText
+                    primaryTypographyProps={{
+                      fontWeight: "bold",
+                      paddingLeft: "36px",
+                      paddingRight: "36px",
+                    }}
+                    primary="For"
+                  />
                 </ListItemButton>
               </ListItem>
 
@@ -431,7 +567,14 @@ export default function Sidebar() {
               onClick={handleAula6Click}
               style={isAula6Active ? activeStyle : {}}
             >
-              <ListItemText primaryTypographyProps={{ fontWeight: 'bold', paddingLeft: '36px', paddingRight: '36px' }} primary="Aula 6 - Funções" />
+              <ListItemText
+                primaryTypographyProps={{
+                  fontWeight: "bold",
+                  paddingLeft: "36px",
+                  paddingRight: "36px",
+                }}
+                primary="Aula 6 - Funções"
+              />
               {openAula6 ? <ExpandLess /> : <ExpandMore />}
             </ListItemButton>
           </ListItem>
@@ -447,7 +590,14 @@ export default function Sidebar() {
                   sx={{ pl: 4 }} // indent para destacar subitem
                   style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 >
-                  <ListItemText primaryTypographyProps={{ fontWeight: 'bold', paddingLeft: '36px', paddingRight: '36px' }} primary="Início" />
+                  <ListItemText
+                    primaryTypographyProps={{
+                      fontWeight: "bold",
+                      paddingLeft: "36px",
+                      paddingRight: "36px",
+                    }}
+                    primary="Início"
+                  />
                 </ListItemButton>
               </ListItem>
 
@@ -459,11 +609,17 @@ export default function Sidebar() {
                   sx={{ pl: 4 }} // indent para destacar subitem
                   style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 >
-                  <ListItemText primaryTypographyProps={{ fontWeight: 'bold', paddingLeft: '36px', paddingRight: '36px' }} primary="Funções" />
+                  <ListItemText
+                    primaryTypographyProps={{
+                      fontWeight: "bold",
+                      paddingLeft: "36px",
+                      paddingRight: "36px",
+                    }}
+                    primary="Funções"
+                  />
                 </ListItemButton>
               </ListItem>
               {/* Adicione mais subitens se quiser */}
-
             </List>
           </Collapse>
 
@@ -473,7 +629,14 @@ export default function Sidebar() {
               onClick={handleExercicio1Click}
               style={isExercicio1Active ? activeStyle : {}}
             >
-              <ListItemText primaryTypographyProps={{ fontWeight: 'bold', paddingLeft: '36px', paddingRight: '36px' }} primary="Exercicio 1 - Python Básico" />
+              <ListItemText
+                primaryTypographyProps={{
+                  fontWeight: "bold",
+                  paddingLeft: "36px",
+                  paddingRight: "36px",
+                }}
+                primary="Exercicio 1 - Python Básico"
+              />
               {openExercicio1 ? <ExpandLess /> : <ExpandMore />}
             </ListItemButton>
           </ListItem>
@@ -488,7 +651,14 @@ export default function Sidebar() {
                   sx={{ pl: 4 }} // indent para destacar subitem
                   style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 >
-                  <ListItemText primaryTypographyProps={{ fontWeight: 'bold', paddingLeft: '36px', paddingRight: '36px' }} primary="Exercício de Soma" />
+                  <ListItemText
+                    primaryTypographyProps={{
+                      fontWeight: "bold",
+                      paddingLeft: "36px",
+                      paddingRight: "36px",
+                    }}
+                    primary="Exercício de Soma"
+                  />
                 </ListItemButton>
               </ListItem>
 
@@ -499,7 +669,14 @@ export default function Sidebar() {
                   sx={{ pl: 4 }} // indent para destacar subitem
                   style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 >
-                  <ListItemText primaryTypographyProps={{ fontWeight: 'bold', paddingLeft: '36px', paddingRight: '36px' }} primary="Exercício de Máximo" />
+                  <ListItemText
+                    primaryTypographyProps={{
+                      fontWeight: "bold",
+                      paddingLeft: "36px",
+                      paddingRight: "36px",
+                    }}
+                    primary="Exercício de Máximo"
+                  />
                 </ListItemButton>
               </ListItem>
 
@@ -510,7 +687,14 @@ export default function Sidebar() {
                   sx={{ pl: 4 }} // indent para destacar subitem
                   style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 >
-                  <ListItemText primaryTypographyProps={{ fontWeight: 'bold', paddingLeft: '36px', paddingRight: '36px' }} primary="Exercício da Área do Triangulo" />
+                  <ListItemText
+                    primaryTypographyProps={{
+                      fontWeight: "bold",
+                      paddingLeft: "36px",
+                      paddingRight: "36px",
+                    }}
+                    primary="Exercício da Área do Triangulo"
+                  />
                 </ListItemButton>
               </ListItem>
 
@@ -521,7 +705,14 @@ export default function Sidebar() {
                   sx={{ pl: 4 }} // indent para destacar subitem
                   style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 >
-                  <ListItemText primaryTypographyProps={{ fontWeight: 'bold', paddingLeft: '36px', paddingRight: '36px' }} primary="Exercício da Área do Circulo" />
+                  <ListItemText
+                    primaryTypographyProps={{
+                      fontWeight: "bold",
+                      paddingLeft: "36px",
+                      paddingRight: "36px",
+                    }}
+                    primary="Exercício da Área do Circulo"
+                  />
                 </ListItemButton>
               </ListItem>
 
@@ -532,7 +723,14 @@ export default function Sidebar() {
                   sx={{ pl: 4 }} // indent para destacar subitem
                   style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 >
-                  <ListItemText primaryTypographyProps={{ fontWeight: 'bold', paddingLeft: '36px', paddingRight: '36px' }} primary="Exercício de Inverter String" />
+                  <ListItemText
+                    primaryTypographyProps={{
+                      fontWeight: "bold",
+                      paddingLeft: "36px",
+                      paddingRight: "36px",
+                    }}
+                    primary="Exercício de Inverter String"
+                  />
                 </ListItemButton>
               </ListItem>
 
@@ -543,7 +741,14 @@ export default function Sidebar() {
                   sx={{ pl: 4 }} // indent para destacar subitem
                   style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 >
-                  <ListItemText primaryTypographyProps={{ fontWeight: 'bold', paddingLeft: '36px', paddingRight: '36px' }} primary="Exercício de Soma" />
+                  <ListItemText
+                    primaryTypographyProps={{
+                      fontWeight: "bold",
+                      paddingLeft: "36px",
+                      paddingRight: "36px",
+                    }}
+                    primary="Exercício de Soma"
+                  />
                 </ListItemButton>
               </ListItem>
               {/* Adicione mais subitens se quiser */}
@@ -556,7 +761,14 @@ export default function Sidebar() {
               onClick={handleExercicio2Click}
               style={isExercicio2Active ? activeStyle : {}}
             >
-              <ListItemText primaryTypographyProps={{ fontWeight: 'bold', paddingLeft: '36px', paddingRight: '36px' }} primary="Exercícios 2 - Python Intermediário" />
+              <ListItemText
+                primaryTypographyProps={{
+                  fontWeight: "bold",
+                  paddingLeft: "36px",
+                  paddingRight: "36px",
+                }}
+                primary="Exercícios 2 - Python Intermediário"
+              />
               {openExercicio2 ? <ExpandLess /> : <ExpandMore />}
             </ListItemButton>
           </ListItem>
@@ -572,7 +784,14 @@ export default function Sidebar() {
                   sx={{ pl: 4 }} // indent para destacar subitem
                   style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 >
-                  <ListItemText primaryTypographyProps={{ fontWeight: 'bold', paddingLeft: '36px', paddingRight: '36px' }} primary="Exercicio de Media Negativos " />
+                  <ListItemText
+                    primaryTypographyProps={{
+                      fontWeight: "bold",
+                      paddingLeft: "36px",
+                      paddingRight: "36px",
+                    }}
+                    primary="Exercicio de Media Negativos "
+                  />
                 </ListItemButton>
               </ListItem>
 
@@ -587,11 +806,11 @@ export default function Sidebar() {
       <IconButton
         onClick={toggleDrawer}
         sx={{
-          position: 'absolute',
+          position: "absolute",
           top: 20,
           // O botão se desloca para a direita quando a sidebar abre
           left: open ? drawerWidth + 10 : 10,
-          transition: 'left 0.3s', // animação suave
+          transition: "left 0.3s", // animação suave
         }}
       >
         {/* Se estiver aberta, mostra X; senão, mostra o ícone de menu */}

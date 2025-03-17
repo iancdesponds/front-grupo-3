@@ -1,13 +1,13 @@
-import React from 'react';
-import QuestionCard from '../../../components/QuestionCard';
+import React from "react";
+import QuestionCard from "../../../components/QuestionCard";
 
 function InicioAula2() {
   return (
     <div>
       <h1>Aula 2 - Início</h1>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum 
-        ullamcorper enim at nulla faucibus luctus. Quisque pulvinar augue non 
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
+        ullamcorper enim at nulla faucibus luctus. Quisque pulvinar augue non
         justo finibus cursus.
       </p>
 
@@ -25,7 +25,7 @@ print(f"Os números sorteados foram: {valor2} {valor4} {valor3} {valor1}")`}
           "Os números sorteados foram: 3 10 16 28",
           "Os números sorteados foram: {valor2} {valor4} {valor3} {valor1}",
           "Os números sorteados foram: 1 16 10 28",
-          "Os números sorteados foram: 10 28 16 3"
+          "Os números sorteados foram: 10 28 16 3",
         ]}
         correctIndex={3} // "10 28 16 3" é a opção 3 (0-based)
         explanation="Será impresso a mensagem: 10 28 16 3. Como criamos uma f-string, as variáveis aparecem no lugar das chaves."
@@ -42,14 +42,12 @@ print(f"Os números sorteados foram: {valor2} {valor4} {valor3} {valor1}")`}
           "Exibe Hello World! no terminal",
           "Encerra o programa",
           "Imprime a data atual",
-          "Nada"
+          "Nada",
         ]}
         correctIndex={0}
         explanation="O print exibe o texto no terminal."
         localStorageKey="exercicio3"
       />
-
-      
     </div>
   );
 }
