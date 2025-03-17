@@ -29,6 +29,7 @@
     font-family: "Courier New", Courier, monospace;
     margin-bottom: 20px;
     white-space: pre-wrap;
+    color: #333;
   }
   
   /* Pergunta principal */
@@ -90,6 +91,7 @@
   /* Texto da alternativa */
   .answer-text {
     flex: 1;
+    white-space: pre-wrap;
   }
   
   /* Botão Enviar */
