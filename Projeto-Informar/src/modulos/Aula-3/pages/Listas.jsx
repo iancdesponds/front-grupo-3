@@ -103,13 +103,13 @@ print(b)`}
         questionText="Qual será a mensagem impressa no terminal?"
         options={[
           `True
-          False`,
+False`,
           `False
-          True`,
+True`,
           `False
-          False`,
+False`,
           `True
-          True`
+True`
         ]}
         correctIndex={0}
         explanation="'in' traduz para 'em', ou seja, a é True(verdadeiro) enquanto b é False(falso) porque '4' é uma string e não um inteiro."
