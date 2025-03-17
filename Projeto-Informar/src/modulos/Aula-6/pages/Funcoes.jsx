@@ -21,7 +21,7 @@ function Funcoes() {
         ]}
         correctIndex={0} 
         explanation="Para utilizamos um pacote, usamos o comando import seguido do nome do pacote."
-        localStorageKey="exercicio1"
+        localStorageKey="exercicio1_funcoes"
       />
 
       {/* Você pode reutilizar o componente para outro exercício: */}
@@ -36,7 +36,7 @@ function Funcoes() {
         ]}
         correctIndex={3}
         explanation="Todas as alterntivas estão corretas."
-        localStorageKey="exercicio2"
+        localStorageKey="exercicio2_funcoes"
       />
       <QuestionCard
         questionTitle="Exercício 3"
@@ -49,7 +49,7 @@ function Funcoes() {
         ]}
         correctIndex={0}
         explanation="Uma função é declarada no formato 'def nome_da_função(parâmetros):'. Não se esqueça dos ':' ao final! "
-        localStorageKey="exercicio3"
+        localStorageKey="exercicio3_funcoes"
       />
       <QuestionCard
         questionTitle="Exercício 4"
@@ -69,7 +69,7 @@ print(resultado)
         ]}
         correctIndex={2}
         explanation="Quando chamada como soma(3), o valor 3 é atribuído a 'a', e 'b' mantém seu valor padrão (5)."
-        localStorageKey="exercicio4"
+        localStorageKey="exercicio4_funcoes"
       />      
 
       <QuestionCard
@@ -91,7 +91,7 @@ print(misterio(7))
         ]}
         correctIndex={1}
         explanation="Como 7 % 2 não é igual a 0, a condição do if falha e a função retorna 'Ímpar'."
-        localStorageKey="exercicio5"
+        localStorageKey="exercicio5_funcoes"
       />
     </div>
   )

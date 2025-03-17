@@ -23,10 +23,12 @@ import Listas from './modulos/Aula-3/pages/Listas';
 import Strings from './modulos/Aula-3/pages/Strings';
 
 // Páginas de Aula-4
-import InicioAula4 from './modulos/Aula-4/pages/inicio';
+import InicioAula4 from './modulos/Aula-4/pages/Inicio';
+import While from './modulos/Aula-4/pages/While';
 
 // Páginas de Aula-5
 import InicioAula5 from './modulos/Aula-5/pages/inicio';
+import For from './modulos/Aula-5/pages/For';
 
 // Páginas de Aula-6
 import InicioAula6 from './modulos/Aula-6/pages/inicio';
@@ -75,9 +77,11 @@ function App() {
         
             {/* Rotas de Aula-4 */}
             <Route path="/aula-4/inicio" element={<InicioAula4 />} />
+            <Route path="/aula-4/while" element={<While />} />
         
             {/* Rotas de Aula-5 */}
             <Route path="/aula-5/inicio" element={<InicioAula5 />} />
+            <Route path="/aula-5/for" element={<For />} />
         
             {/* Rotas de Aula-6 */}
             <Route path="/aula-6/inicio" element={<InicioAula6 />} />

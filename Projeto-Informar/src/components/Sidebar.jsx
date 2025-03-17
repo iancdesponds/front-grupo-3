@@ -363,6 +363,17 @@ export default function Sidebar() {
                   <ListItemText primaryTypographyProps={{ fontWeight: 'bold', paddingLeft: '36px', paddingRight: '36px' }} primary="Início" />
                 </ListItemButton>
               </ListItem>
+              {/* While */}
+              <ListItem disablePadding>
+                <ListItemButton
+                  component={NavLink}
+                  to="/aula-4/while"
+                  sx={{ pl: 4 }} // indent para destacar subitem
+                  style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                >
+                  <ListItemText primaryTypographyProps={{ fontWeight: 'bold', paddingLeft: '36px', paddingRight: '36px' }} primary="While" />
+                </ListItemButton>
+              </ListItem>
 
               {/* Adicione mais subitens se quiser */}
             </List>
@@ -390,6 +401,17 @@ export default function Sidebar() {
                   style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 >
                   <ListItemText primaryTypographyProps={{ fontWeight: 'bold', paddingLeft: '36px', paddingRight: '36px' }} primary="Início" />
+                </ListItemButton>
+              </ListItem>
+              {/* For */}
+              <ListItem disablePadding>
+                <ListItemButton
+                  component={NavLink}
+                  to="/aula-5/for"
+                  sx={{ pl: 4 }} // indent para destacar subitem
+                  style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                >
+                  <ListItemText primaryTypographyProps={{ fontWeight: 'bold', paddingLeft: '36px', paddingRight: '36px' }} primary="For" />
                 </ListItemButton>
               </ListItem>
 
