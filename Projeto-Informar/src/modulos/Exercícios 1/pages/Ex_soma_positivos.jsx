@@ -9,7 +9,7 @@ function Ex_soma_positivos() {
         Faça uma função "soma_positivos()" que receba uma lista de números
         inteiros e retorne a soma de todos os números positivos.
       </p>
-      <CodeEditor exerciseId={7} />
+      <CodeEditor exerciseId={6} />
     </div>
   );
 }

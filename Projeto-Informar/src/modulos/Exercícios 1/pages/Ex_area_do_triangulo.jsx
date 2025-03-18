@@ -17,7 +17,7 @@ function Ex_area_do_triangulo() {
             "\\[ \\text{Área} = \\frac{\\text{base} \\times \\text{altura}}{2} \\]"
           }
         </MathJax>
-        <CodeEditor exerciseId={4} />
+        <CodeEditor exerciseId={3} />
       </div>
     </MathJaxContext>
   );

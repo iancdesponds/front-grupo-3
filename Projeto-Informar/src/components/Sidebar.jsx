@@ -747,7 +747,7 @@ export default function Sidebar() {
                       paddingLeft: "36px",
                       paddingRight: "36px",
                     }}
-                    primary="Exercício de Soma"
+                    primary="Exercício de Somar Lista"
                   />
                 </ListItemButton>
               </ListItem>
@@ -776,7 +776,7 @@ export default function Sidebar() {
           {/* Sublista de Exercício 2 */}
           <Collapse in={openExercicio2} timeout="auto" unmountOnExit>
             <List component="div" disablePadding>
-              {/* Exercicio de  */}
+              {/* Exercicio de  Média dos negativos*/}
               <ListItem disablePadding>
                 <ListItemButton
                   component={NavLink}
@@ -791,6 +791,79 @@ export default function Sidebar() {
                       paddingRight: "36px",
                     }}
                     primary="Exercicio de Media Negativos "
+                  />
+                </ListItemButton>
+              </ListItem>
+
+              {/* Exercicio de Ordenar Listas*/}
+              <ListItem disablePadding>
+                <ListItemButton
+                  component={NavLink}
+                  to="/Exercicio-2/ex_ordena_lista"
+                  sx={{ pl: 4 }} // indent para destacar subitem
+                  style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                >
+                  <ListItemText
+                    primaryTypographyProps={{
+                      fontWeight: "bold",
+                      paddingLeft: "36px",
+                      paddingRight: "36px",
+                    }}
+                    primary="Exercicio de Ordenar as Listas"
+                  />
+                </ListItemButton>
+              </ListItem>
+              {/* Exercicio de  Contar Palavras*/}
+              <ListItem disablePadding>
+                <ListItemButton
+                  component={NavLink}
+                  to="/Exercicio-2/ex_conta_palavras"
+                  sx={{ pl: 4 }} // indent para destacar subitem
+                  style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                >
+                  <ListItemText
+                    primaryTypographyProps={{
+                      fontWeight: "bold",
+                      paddingLeft: "36px",
+                      paddingRight: "36px",
+                    }}
+                    primary="Exercicio de Contar Palavras"
+                  />
+                </ListItemButton>
+              </ListItem>
+              {/* Exercicio do Eh_primo*/}
+              <ListItem disablePadding>
+                <ListItemButton
+                  component={NavLink}
+                  to="/Exercicio-2/ex_eh_primo"
+                  sx={{ pl: 4 }} // indent para destacar subitem
+                  style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                >
+                  <ListItemText
+                    primaryTypographyProps={{
+                      fontWeight: "bold",
+                      paddingLeft: "36px",
+                      paddingRight: "36px",
+                    }}
+                    primary="Exercicio do Eh_primo"
+                  />
+                </ListItemButton>
+              </ListItem>
+              {/* Exercicio do Celsius para Fahrenheit*/}
+              <ListItem disablePadding>
+                <ListItemButton
+                  component={NavLink}
+                  to="/Exercicio-2/ex_celsius_para_fahrenheit"
+                  sx={{ pl: 4 }} // indent para destacar subitem
+                  style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                >
+                  <ListItemText
+                    primaryTypographyProps={{
+                      fontWeight: "bold",
+                      paddingLeft: "36px",
+                      paddingRight: "36px",
+                    }}
+                    primary="Exercicio do Celsius para Fahrenheit"
                   />
                 </ListItemButton>
               </ListItem>

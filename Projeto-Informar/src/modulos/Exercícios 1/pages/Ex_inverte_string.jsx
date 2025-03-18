@@ -9,7 +9,7 @@ function Ex_inverte_string() {
         Implemente a função <code>reserve_string()</code> que recebe uma string
         e retorna essa string invertida, ou seja, de trás para frente.
       </p>
-      <CodeEditor exerciseId={6} />
+      <CodeEditor exerciseId={5} />
     </div>
   );
 }

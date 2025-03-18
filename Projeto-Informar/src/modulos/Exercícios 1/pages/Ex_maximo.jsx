@@ -10,7 +10,7 @@ function Ex_maximo() {
         SUA FUNÇÃO) que recebe uma lista de numeros como argumento e retorna o
         maior numero inteiro postivo.
       </p>
-      <CodeEditor exerciseId={3} />
+      <CodeEditor exerciseId={2} />
     </div>
   );
 }

@@ -11,7 +11,7 @@ function Ex_soma() {
         soma deles. É possível que tentem passar strings como argumento, nesse
         caso o código deve retornar False.
       </p>
-      <CodeEditor exerciseId={2} />
+      <CodeEditor exerciseId={1} />
     </div>
   );
 }

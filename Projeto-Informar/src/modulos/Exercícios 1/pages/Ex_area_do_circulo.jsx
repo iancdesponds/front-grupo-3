@@ -15,7 +15,7 @@ function Ex_area_do_circulo() {
         <MathJax>
           {"\\[ \\text{Área} = \\pi \\times \\text{raio}^2 \\]"}
         </MathJax>
-        <CodeEditor exerciseId={5} />
+        <CodeEditor exerciseId={4} />
       </div>
     </MathJaxContext>
   );

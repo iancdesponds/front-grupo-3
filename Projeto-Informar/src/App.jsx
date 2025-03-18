@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Sidebar from "./components/Sidebar";
 import Home from "./modulos/Home";
 import Sobre from "./modulos/Sobre";
+import "./App.css";
 
 //Págunas de Admin
 import CreateExercisePage from "./modulos/Admin/pages/Create_code_exercise";
@@ -41,9 +42,13 @@ import Ex_area_do_triangulo from "./modulos/Exercícios 1/pages/Ex_area_do_trian
 import Ex_area_do_circulo from "./modulos/Exercícios 1/pages/Ex_area_do_circulo";
 import Ex_inverte_string from "./modulos/Exercícios 1/pages/Ex_inverte_string";
 import Ex_soma_positivos from "./modulos/Exercícios 1/pages/Ex_soma_positivos";
-import Ex_media_negativos from "./modulos/Exercícios 2/pages/Ex_media_negativos";
 
-import "./App.css";
+//Páginas de Exercícios-2
+import Ex_media_negativos from "./modulos/Exercícios 2/pages/Ex_media_negativos";
+import Ex_ordena_lista from "./modulos/Exercícios 2/pages/Ex_ordena_lista";
+import Ex_conta_palavras from "./modulos/Exercícios 2/pages/Ex_conta_palavras";
+import Ex_eh_primo from "./modulos/Exercícios 2/pages/Ex_eh_primo";
+import Ex_celsius_para_fahrenheit from "./modulos/Exercícios 2/pages/Ex_coverte_para_fahrenheit";
 
 function App() {
   return (
@@ -112,6 +117,22 @@ function App() {
             <Route
               path="/Exercicio-2/ex_media_negativos"
               element={<Ex_media_negativos />}
+            />
+            <Route
+              path="/Exercicio-2/ex_ordena_lista"
+              element={<Ex_ordena_lista />}
+            />
+            <Route
+              path="/Exercicio-2/ex_conta_palavras"
+              element={<Ex_conta_palavras />}
+            />
+            <Route
+              path="/Exercicio-2/ex_eh_primo"
+              element={<Ex_eh_primo />}
+            />
+            <Route
+              path="/Exercicio-2/ex_celsius_para_fahrenheit"
+              element={<Ex_celsius_para_fahrenheit />}
             />
 
             {/* Adicione outras rotas conforme precisar */}
