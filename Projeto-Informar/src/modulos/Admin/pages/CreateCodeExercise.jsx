@@ -1,23 +1,35 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import MonacoEditor from "@monaco-editor/react"; // Importando o Monaco Editor
 
 class CreateExercisePage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      title: "",
       question: "",
+      lesson_id: "", // Alterado para 'lesson_id'
       type: "multiple_choice",
       options: ["", "", "", ""],
       answer: "",
       difficulty: "easy",
       testCode: "",
       releaseDate: "",
+      lessons: [], // Lista de aulas disponíveis
     };
+  }
+
+  // Carrega as aulas disponíveis do backend
+  componentDidMount() {
+    fetch("http://localhost:8000/lessons")
+      .then((res) => res.json())
+      .then((data) => this.setState({ lessons: data }))
+      .catch((error) => console.error("Erro ao carregar aulas:", error));
   }
 
   handleSubmit = async (e) => {
     e.preventDefault();
     const {
+      title,
       question,
       type,
       options,
@@ -25,10 +37,12 @@ class CreateExercisePage extends React.Component {
       difficulty,
       testCode,
       releaseDate,
+      lesson_id // Alterado para 'lesson_id'
     } = this.state;
 
     // Monta o objeto de dados de exercício a ser enviado para o backend
     const exerciseData = {
+      title,
       question,
       type,
       options:
@@ -39,7 +53,9 @@ class CreateExercisePage extends React.Component {
       difficulty,
       test_code: type === "coding" ? testCode : null, // Envia código de teste apenas se for 'coding'
       release_date: releaseDate,
+      lesson_id: parseInt(lesson_id), // Garantindo que 'lesson_id' seja um número inteiro
     };
+
     console.log(exerciseData);
     try {
       const response = await fetch("http://localhost:8000/exercicios", {
@@ -62,6 +78,7 @@ class CreateExercisePage extends React.Component {
 
   render() {
     const {
+      title,
       question,
       type,
       options,
@@ -69,12 +86,23 @@ class CreateExercisePage extends React.Component {
       difficulty,
       testCode,
       releaseDate,
+      lesson_id,
+      lessons,
     } = this.state;
 
     return (
       <div className="create-exercise-container">
         <h1>Criar Exercício</h1>
         <form className="exercise-form" onSubmit={this.handleSubmit}>
+          <div className="form-group">
+            <label>Título</label>
+            <textarea
+              className="input-field"
+              value={title}
+              onChange={(e) => this.setState({ title: e.target.value })}
+              required
+            />
+          </div>
           <div className="form-group">
             <label>Pergunta:</label>
             <textarea
@@ -83,6 +111,23 @@ class CreateExercisePage extends React.Component {
               onChange={(e) => this.setState({ question: e.target.value })}
               required
             />
+          </div>
+
+          {/* Seleção da Aula */}
+          <div className="form-group">
+            <label>Aula:</label>
+            <select
+              className="input-field"
+              value={lesson_id} // Alterado para 'lesson_id'
+              onChange={(e) => this.setState({ lesson_id: e.target.value })}
+            >
+              <option value="">Selecione uma Aula</option>
+              {lessons.map((lessonItem) => (
+                <option key={lessonItem.id} value={lessonItem.id}>
+                  {lessonItem.title}
+                </option>
+              ))}
+            </select>
           </div>
 
           <div className="form-group">

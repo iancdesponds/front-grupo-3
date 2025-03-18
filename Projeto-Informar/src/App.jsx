@@ -5,7 +5,8 @@ import Home from "./modulos/Home";
 import Sobre from "./modulos/Sobre";
 
 //Págunas de Admin
-import CreateExercisePage from "./modulos/Admin/pages/Create_code_exercise";
+import CreateExercisePage from "./modulos/Admin/pages/CreateCodeExercise";
+import CreateLesson from "./modulos/Admin/pages/CreateLesson";
 
 // Páginas de Aula-1
 import InicioAula1 from "./modulos/Aula-1/pages/inicio";
@@ -60,6 +61,7 @@ function App() {
 
             {/* Rota para Admin */}
             <Route path="/admin/exercicios" element={<CreateExercisePage />} />
+            <Route path="/admin/lesson" element={<CreateLesson />} />
 
             {/* Rotas de Aula-1 */}
             <Route path="/aula-1/inicio" element={<InicioAula1 />} />
