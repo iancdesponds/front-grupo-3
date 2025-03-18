@@ -1,5 +1,6 @@
 import React from "react";
 import QuestionCard from "../../../components/QuestionCard";
+import NextPage from "../../../components/Next_page";
 
 function Condicionais() {
   return (
@@ -115,6 +116,7 @@ else:
         explanation="Como a idade informada é maior que 12, ela não entra no primeiro if, e como é menor que 20, entra no segundo. Assim, a mensagem impressa será: Adolescente."
         localStorageKey="exercicio6_condicionais"
       />
+      <NextPage nomeDaPagina={'Aula 3'} link={'/aula-3/inicio'}/>
     </div>
   );
 }

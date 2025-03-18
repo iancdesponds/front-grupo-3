@@ -41,13 +41,13 @@ print(nome)`}
         questionText="Qual será a mensagem impressa no terminal?"
         options={[
           `nome
-          Pedro`,
+Pedro`,
           `Pedro
-          nome`,
+nome`,
           `'nome' 
-          nome`,
+nome`,
           `'nome'
-          Pedro`,
+Pedro`,
         ]}
         correctIndex={0}
         explanation="A primeira impressão está imprimindo a string 'nome', enquanto a segunda está imprimindo a variável nome que armazena 'Pedro'."
@@ -81,7 +81,9 @@ print(a * b)`}
         localStorageKey="exercicio5_variaveis"
       />
         <NextPage nomeDaPagina={'Terminal'} link={'/aula-1/terminal'}/>
+        
     </div>
+    
 
   );
 }

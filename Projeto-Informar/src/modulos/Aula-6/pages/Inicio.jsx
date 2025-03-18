@@ -1,4 +1,5 @@
 import React from 'react';
+import NextPage from "../../../components/Next_page";
 
 function InicioAula6() {
   return (
@@ -11,6 +12,7 @@ As funções servem para facilitar a programação, ajudando a evitar a repetiç
 As funções precisam ser definidas e atuam sobre qualquer tipo de variável, desde que os seus comandos respeitem os limites dessa variável. <strong>Todas as funções devem retornar algo</strong>, que por sua vez também pode ser qualquer tipo de variável.
 Ou seja, elas <strong>funcionam como um cozinheiro executando uma receita de bolo</strong>. Você fornece para ele os ingredientes e no final ele te retorna o bolo pronto.
       </p>
+      <NextPage nomeDaPagina={'Funções'} link={'/aula-6/funcoes'}/>
     </div>
   );
 }

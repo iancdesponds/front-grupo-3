@@ -1,5 +1,6 @@
 import React from "react";
 import QuestionCard from "../../../components/QuestionCard";
+import NextPage from "../../../components/Next_page";
 
 function Listas() {
   return (
@@ -101,6 +102,7 @@ True`,
         explanation="'in' traduz para 'em', ou seja, a é True(verdadeiro) enquanto b é False(falso) porque '4' é uma string e não um inteiro."
         localStorageKey="exercicio6_listas"
       />
+      <NextPage nomeDaPagina={'Strings'} link={'/aula-3/strings'}/>
     </div>
   );
 }

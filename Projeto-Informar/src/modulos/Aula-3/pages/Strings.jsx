@@ -1,5 +1,6 @@
 import React from "react";
 import QuestionCard from "../../../components/QuestionCard";
+import NextPage from "../../../components/Next_page";
 
 function Strings() {
   return (
@@ -150,6 +151,7 @@ print(dividida)`}
         explanation="A função split(argumento) divide os termos entre o argumento formando uma lista (se não houver argumento a string é dividida por espaços)."
         localStorageKey="exercicio9_strings"
       />
+      <NextPage nomeDaPagina={'Aula 4'} link={'/aula-4/inicio'}/>
     </div>
   );
 }

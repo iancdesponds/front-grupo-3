@@ -1,5 +1,6 @@
 import React from 'react';
 import QuestionCard from '../../../components/QuestionCard';
+import NextPage from "../../../components/Next_page";
 
 function InicioAula2() {
   return (
@@ -19,7 +20,7 @@ function InicioAula2() {
       <p>
       <strong>elif</strong> = <strong>else</strong> + <strong>if</strong>
       </p>
-
+      <NextPage nomeDaPagina={'Condicionais'} link={'/aula-2/condicionais'}/>
     </div>
   );
 }

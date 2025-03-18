@@ -1,5 +1,6 @@
 import React from "react";
 import QuestionCard from "../../../components/QuestionCard";
+import NextPage from "../../../components/Next_page";
 
 function While() {
   return (
@@ -83,6 +84,7 @@ contador += 1`}
         explanation="O trecho do código que deveria aumentar o contador está indentado incorretamente, fazendo com que o contador não atualize e gere um loop infinito."
         localStorageKey="exercicio5_while"
       />
+      <NextPage nomeDaPagina={'Aula 5'} link={'/aula-5/inicio'}/>
     </div>
   );
 }

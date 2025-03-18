@@ -1,4 +1,5 @@
 import React from "react";
+import NextPage from "../../../components/Next_page";
 
 function InicioAula3() {
   return (
@@ -16,6 +17,7 @@ function InicioAula3() {
       String é um tipo de variável em python que representa um encadeamento de caracteres, ou seja, representa valores em formato de <strong>texto, palavras, frase.</strong> Uma string pode representar um número, mas ao ele estar nesse formato não será possível efetuar nenhuma conta com ele. <strong>Cada elemento de uma string possui um índice (index)</strong> que se refere a ela dentro daquela variável.
 Esse índice começa em zero  e vai até o elemento final daquela string.
       </p>
+      <NextPage nomeDaPagina={'Listas'} link={'/aula-3/listas'}/>
     </div>
   );
 }

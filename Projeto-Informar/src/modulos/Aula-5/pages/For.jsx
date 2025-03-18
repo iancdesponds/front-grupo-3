@@ -1,5 +1,6 @@
 import React from "react";
 import QuestionCard from "../../../components/QuestionCard";
+import NextPage from "../../../components/Next_page";
 
 function For() {
   return (
@@ -131,6 +132,7 @@ print(soma)`}
         explanation="O terceiro valor (-1) é o step (traduz para passo), que determina o intervalo entre os números gerados, fazendo a contagem decrescente."
         localStorageKey="exercicio7_for"
       />
+      <NextPage nomeDaPagina={'Aula 6'} link={'/aula-6/inicio'}/>
     </div>
   );
 }

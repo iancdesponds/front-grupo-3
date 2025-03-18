@@ -1,4 +1,5 @@
 import React from 'react';
+import NextPage from "../../../components/Next_page";
 
 function InicioAula5() {
   return (
@@ -14,6 +15,7 @@ function InicioAula5() {
       <p>
         Além de poder ser usado como uma forma mais eficiente de um contador while, o for pode ser usado para percorrer elementos de listas e strings.
       </p>
+      <NextPage nomeDaPagina={'For'} link={'/aula-5/for'}/>
     </div>
   );
 }

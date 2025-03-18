@@ -605,7 +605,7 @@ export default function Sidebar() {
               <ListItem disablePadding>
                 <ListItemButton
                   component={NavLink}
-                  to="/aula-6/Funcoes"
+                  to="/aula-6/funcoes"
                   sx={{ pl: 4 }} // indent para destacar subitem
                   style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 >

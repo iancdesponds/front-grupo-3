@@ -27,11 +27,11 @@ import InicioAula4 from "./modulos/Aula-4/pages/Inicio";
 import While from "./modulos/Aula-4/pages/While";
 
 // Páginas de Aula-5
-import InicioAula5 from "./modulos/Aula-5/pages/inicio";
+import InicioAula5 from "./modulos/Aula-5/pages/Inicio";
 import For from "./modulos/Aula-5/pages/For";
 
 // Páginas de Aula-6
-import InicioAula6 from "./modulos/Aula-6/pages/inicio";
+import InicioAula6 from "./modulos/Aula-6/pages/Inicio";
 import Funcoes from "./modulos/Aula-6/pages/Funcoes";
 
 //Páginas de Exercicios-1

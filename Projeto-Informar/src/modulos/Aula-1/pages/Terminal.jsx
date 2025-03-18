@@ -1,5 +1,6 @@
 import React from 'react';
 import QuestionCard from '../../../components/QuestionCard';
+import NextPage from "../../../components/Next_page";
 
 function Terminal() {
   return (
@@ -41,6 +42,7 @@ print(2*a-b)`}
         explanation="O variável b vai se tornar o que o usuário digitar."
         localStorageKey="exercicio2_terminal"
       />
+      <NextPage nomeDaPagina={'Aula 2'} link={'/aula-2/inicio'}/>
     </div>
   );
 }
