@@ -10,7 +10,7 @@ import "./App.css";
 import CreateExercisePage from "./modulos/Admin/pages/Create_code_exercise";
 
 // Páginas de Aula-1
-import InicioAula1 from "./modulos/Aula-1/pages/inicio";
+import InicioAula1 from "./modulos/Aula-1/pages/Inicio";
 import Variaveis from "./modulos/Aula-1/pages/Variaveis";
 import Operacoes from "./modulos/Aula-1/pages/Operacoes";
 import Terminal from "./modulos/Aula-1/pages/Terminal";
