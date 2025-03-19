@@ -1,8 +1,8 @@
 import React from "react";
-import NextPage from "../components/Next_page";
+import NextPage from "../../../components/Next_page";
 import { Box } from "@mui/material";
-import imagem1 from "../assets/imagem1_sobre.png";
-import imagem2 from "../assets/imagem2_sobre.jpg";
+import imagem1 from "../../../assets/imagem1_sobre.png";
+import imagem2 from "../../../assets/imagem2_sobre.jpg";
 function Sobre() {
   return (
     <div>

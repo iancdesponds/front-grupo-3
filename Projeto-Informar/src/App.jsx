@@ -1,8 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Sidebar from "./components/Sidebar";
-import Home from "./modulos/Home";
-import Sobre from "./modulos/Sobre";
+import ScrollToTop from "./ScrollToTop";
+import Home from "./modulos/Home/pages/Home";
+import Sobre from "./modulos/Sobre/pages/Sobre";
 import "./App.css";
 
 //Págunas de Admin
@@ -53,6 +54,7 @@ import Ex_celsius_para_fahrenheit from "./modulos/Exercícios 2/pages/Ex_coverte
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="app-container">
         <Sidebar />
         <div className="content-container">

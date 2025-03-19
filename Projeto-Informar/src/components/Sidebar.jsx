@@ -9,6 +9,8 @@ import {
   ListItemText,
   Collapse,
   Box,
+  useTheme,
+  useMediaQuery,
 } from "@mui/material";
 
 import {
@@ -19,67 +21,50 @@ import {
 } from "@mui/icons-material";
 
 import Logo from "../assets/Logo_gas.png";
-
 import "../App.css";
 
 export default function Sidebar() {
-  // Controla se o Drawer está aberto/fechado
+  // Estados para controlar o Drawer e os submenus
   const [open, setOpen] = useState(true);
-  // Controla se o sub-menu da Aula-1 está expandido
   const [openAula1, setOpenAula1] = useState(false);
-  // Controla se o sub-menu da Aula-2 está expandido
   const [openAula2, setOpenAula2] = useState(false);
-  // Controla se o sub-menu da Aula-3 está expandido
   const [openAula3, setOpenAula3] = useState(false);
-  // Controla se o sub-menu da Aula-4 está expandido
   const [openAula4, setOpenAula4] = useState(false);
-  // Controla se o sub-menu da Aula-5 está expandido
   const [openAula5, setOpenAula5] = useState(false);
-  // Controla se o sub-menu da Aula-6 está expandido
   const [openAula6, setOpenAula6] = useState(false);
-  // Controla se o sub-menu da Exercicio-1 está expandido
   const [openExercicio1, setExercicio1] = useState(false);
-  // Controla se o sub-menu da Exercicio-2 está expandido
   const [openExercicio2, setExercicio2] = useState(false);
 
-  const toggleDrawer = () => {
-    setOpen(!open);
+  // Hooks para responsividade
+  const theme = useTheme();
+  // Se a tela for menor que 600px, o drawerWidth será 100vw; caso contrário, 300px.
+  const isSmall = useMediaQuery("(max-width:600px)");
+  const drawerWidth = isSmall ? "100vw" : 300;
+
+  // Função para abrir/fechar o Drawer
+  const toggleDrawer = () => setOpen(!open);
+
+  // Função para fechar o Drawer (apenas se a tela for pequena)
+  const handleNavClick = () => {
+    if (isSmall) {
+      setOpen(false);
+    }
   };
 
-  const handleAula1Click = () => {
-    setOpenAula1(!openAula1);
-  };
-  const handleAula2Click = () => {
-    setOpenAula2(!openAula2);
-  };
-  const handleAula3Click = () => {
-    setOpenAula3(!openAula3);
-  };
-  const handleAula4Click = () => {
-    setOpenAula4(!openAula4);
-  };
-  const handleAula5Click = () => {
-    setOpenAula5(!openAula5);
-  };
-  const handleAula6Click = () => {
-    setOpenAula6(!openAula6);
-  };
-  const handleExercicio1Click = () => {
-    setExercicio1(!openExercicio1);
-  };
-  const handleExercicio2Click = () => {
-    setExercicio2(!openExercicio2);
-  };
-
-  // Largura da sidebar
-  const drawerWidth = 300;
+  // Funções para alternar submenus
+  const handleAula1Click = () => setOpenAula1(!openAula1);
+  const handleAula2Click = () => setOpenAula2(!openAula2);
+  const handleAula3Click = () => setOpenAula3(!openAula3);
+  const handleAula4Click = () => setOpenAula4(!openAula4);
+  const handleAula5Click = () => setOpenAula5(!openAula5);
+  const handleAula6Click = () => setOpenAula6(!openAula6);
+  const handleExercicio1Click = () => setExercicio1(!openExercicio1);
+  const handleExercicio2Click = () => setExercicio2(!openExercicio2);
 
   // Estilo para o link ativo (vermelho)
-  const activeStyle = {
-    color: "red",
-  };
+  const activeStyle = { color: "red" };
 
-  // Verifica se o pathname atual começa com a rota da aula
+  // Verifica se o pathname atual começa com a rota da aula ou exercício
   const location = useLocation();
   const isAula1Active = location.pathname.startsWith("/aula-1");
   const isAula2Active = location.pathname.startsWith("/aula-2");
@@ -92,34 +77,28 @@ export default function Sidebar() {
 
   return (
     <>
-      {/**
-       * TOPO FIXO: Logo + Botão
-       * Fica sempre no canto superior esquerdo
-       */}
+      {/* TOPO FIXO: Logo + Botão */}
       <Box
         sx={{
           display: "flex",
           alignItems: "center",
           height: "100px",
-          // Mantém fixo no topo
           position: "fixed",
           top: 0,
           left: 0,
           right: 0,
           zIndex: (theme) => theme.zIndex.drawer + 1,
-          // Aparência do topo
           backgroundColor: "#fff",
           borderBottom: "1px solid #ccc",
-          px: 2, // padding horizontal
+          px: 2,
         }}
       >
         {/* Botão para abrir/fechar */}
-        <IconButton onClick={() => setOpen(!open)} sx={{ mr: 1 }}>
+        <IconButton onClick={toggleDrawer} sx={{ mr: 1 }}>
           {open ? <CloseIcon /> : <MenuIcon />}
         </IconButton>
-
         {/* Logo ou título */}
-        <Box component={NavLink} to="/">
+        <Box component={NavLink} to="/" onClick={handleNavClick}>
           <Box
             component="img"
             src={Logo}
@@ -127,28 +106,18 @@ export default function Sidebar() {
             sx={{ height: "80px" }}
           />
         </Box>
-        {/* Ou poderia usar um <h1>Informar GAS</h1> ao invés de imagem */}
       </Box>
 
-      {/**
-       * DRAWER (sidebar)
-       * Fica "por baixo" do topo fixo, começando em top: 64px
-       */}
       <Drawer
         variant="persistent"
         anchor="left"
         open={open}
-        // Ajusta zIndex para ficar atrás do top bar
         sx={{
           zIndex: (theme) => theme.zIndex.drawer,
           "& .MuiDrawer-paper": {
-            // Deixa a sidebar logo abaixo do top bar
-            top: "100px",
-            // Ajusta a altura para ocupar o resto da tela
+            top: "100px", // logo fica no topo fixo
             height: "calc(100% - 100px)",
-            // Largura fixa
-            width: 300,
-            // Se quiser transição suave no abrir/fechar:
+            width: drawerWidth,
             transition: "transform 0.3s ease-out",
             boxSizing: "border-box",
             overflowX: "hidden",
@@ -162,6 +131,7 @@ export default function Sidebar() {
             <ListItemButton
               component={NavLink}
               to="/"
+              onClick={handleNavClick}
               style={({ isActive }) => (isActive ? activeStyle : undefined)}
             >
               <ListItemText
@@ -180,6 +150,7 @@ export default function Sidebar() {
             <ListItemButton
               component={NavLink}
               to="/sobre"
+              onClick={handleNavClick}
               style={({ isActive }) => (isActive ? activeStyle : undefined)}
             >
               <ListItemText
@@ -210,7 +181,6 @@ export default function Sidebar() {
               {openAula1 ? <ExpandLess /> : <ExpandMore />}
             </ListItemButton>
           </ListItem>
-
           {/* Sublista de Aula-1 */}
           <Collapse in={openAula1} timeout="auto" unmountOnExit>
             <List component="div" disablePadding>
@@ -219,7 +189,7 @@ export default function Sidebar() {
                 <ListItemButton
                   component={NavLink}
                   to="/aula-1/inicio"
-                  sx={{ pl: 4 }} // indent para destacar subitem
+                  onClick={handleNavClick}
                   style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 >
                   <ListItemText
@@ -232,13 +202,12 @@ export default function Sidebar() {
                   />
                 </ListItemButton>
               </ListItem>
-
               {/* Operações */}
               <ListItem disablePadding>
                 <ListItemButton
                   component={NavLink}
                   to="/aula-1/operacoes"
-                  sx={{ pl: 4 }}
+                  onClick={handleNavClick}
                   style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 >
                   <ListItemText
@@ -251,13 +220,12 @@ export default function Sidebar() {
                   />
                 </ListItemButton>
               </ListItem>
-
               {/* Variáveis */}
               <ListItem disablePadding>
                 <ListItemButton
                   component={NavLink}
                   to="/aula-1/variaveis"
-                  sx={{ pl: 4 }} // indent para destacar subitem
+                  onClick={handleNavClick}
                   style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 >
                   <ListItemText
@@ -270,13 +238,12 @@ export default function Sidebar() {
                   />
                 </ListItemButton>
               </ListItem>
-
               {/* Terminal */}
               <ListItem disablePadding>
                 <ListItemButton
                   component={NavLink}
                   to="/aula-1/terminal"
-                  sx={{ pl: 4 }}
+                  onClick={handleNavClick}
                   style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 >
                   <ListItemText
@@ -289,8 +256,6 @@ export default function Sidebar() {
                   />
                 </ListItemButton>
               </ListItem>
-
-              {/* Adicione mais subitens se quiser */}
             </List>
           </Collapse>
 
@@ -311,7 +276,6 @@ export default function Sidebar() {
               {openAula2 ? <ExpandLess /> : <ExpandMore />}
             </ListItemButton>
           </ListItem>
-
           {/* Sublista de Aula-2 */}
           <Collapse in={openAula2} timeout="auto" unmountOnExit>
             <List component="div" disablePadding>
@@ -320,7 +284,7 @@ export default function Sidebar() {
                 <ListItemButton
                   component={NavLink}
                   to="/aula-2/inicio"
-                  sx={{ pl: 4 }} // indent para destacar subitem
+                  onClick={handleNavClick}
                   style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 >
                   <ListItemText
@@ -338,7 +302,7 @@ export default function Sidebar() {
                 <ListItemButton
                   component={NavLink}
                   to="/aula-2/condicionais"
-                  sx={{ pl: 4 }} // indent para destacar subitem
+                  onClick={handleNavClick}
                   style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 >
                   <ListItemText
@@ -351,8 +315,6 @@ export default function Sidebar() {
                   />
                 </ListItemButton>
               </ListItem>
-
-              {/* Adicione mais subitens se quiser */}
             </List>
           </Collapse>
 
@@ -373,7 +335,6 @@ export default function Sidebar() {
               {openAula3 ? <ExpandLess /> : <ExpandMore />}
             </ListItemButton>
           </ListItem>
-
           {/* Sublista de Aula-3 */}
           <Collapse in={openAula3} timeout="auto" unmountOnExit>
             <List component="div" disablePadding>
@@ -382,7 +343,7 @@ export default function Sidebar() {
                 <ListItemButton
                   component={NavLink}
                   to="/aula-3/inicio"
-                  sx={{ pl: 4 }} // indent para destacar subitem
+                  onClick={handleNavClick}
                   style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 >
                   <ListItemText
@@ -395,13 +356,12 @@ export default function Sidebar() {
                   />
                 </ListItemButton>
               </ListItem>
-
               {/* Listas */}
               <ListItem disablePadding>
                 <ListItemButton
                   component={NavLink}
                   to="/aula-3/listas"
-                  sx={{ pl: 4 }}
+                  onClick={handleNavClick}
                   style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 >
                   <ListItemText
@@ -414,13 +374,12 @@ export default function Sidebar() {
                   />
                 </ListItemButton>
               </ListItem>
-
               {/* Strings */}
               <ListItem disablePadding>
                 <ListItemButton
                   component={NavLink}
                   to="/aula-3/strings"
-                  sx={{ pl: 4 }}
+                  onClick={handleNavClick}
                   style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 >
                   <ListItemText
@@ -433,8 +392,6 @@ export default function Sidebar() {
                   />
                 </ListItemButton>
               </ListItem>
-
-              {/* Adicione mais subitens se quiser */}
             </List>
           </Collapse>
 
@@ -455,7 +412,6 @@ export default function Sidebar() {
               {openAula4 ? <ExpandLess /> : <ExpandMore />}
             </ListItemButton>
           </ListItem>
-
           {/* Sublista de Aula-4 */}
           <Collapse in={openAula4} timeout="auto" unmountOnExit>
             <List component="div" disablePadding>
@@ -464,7 +420,7 @@ export default function Sidebar() {
                 <ListItemButton
                   component={NavLink}
                   to="/aula-4/inicio"
-                  sx={{ pl: 4 }} // indent para destacar subitem
+                  onClick={handleNavClick}
                   style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 >
                   <ListItemText
@@ -482,7 +438,7 @@ export default function Sidebar() {
                 <ListItemButton
                   component={NavLink}
                   to="/aula-4/while"
-                  sx={{ pl: 4 }} // indent para destacar subitem
+                  onClick={handleNavClick}
                   style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 >
                   <ListItemText
@@ -495,10 +451,9 @@ export default function Sidebar() {
                   />
                 </ListItemButton>
               </ListItem>
-
-              {/* Adicione mais subitens se quiser */}
             </List>
           </Collapse>
+
           {/* AULA-5: item que expande subitens */}
           <ListItem disablePadding>
             <ListItemButton
@@ -516,7 +471,6 @@ export default function Sidebar() {
               {openAula5 ? <ExpandLess /> : <ExpandMore />}
             </ListItemButton>
           </ListItem>
-
           {/* Sublista de Aula-5 */}
           <Collapse in={openAula5} timeout="auto" unmountOnExit>
             <List component="div" disablePadding>
@@ -525,7 +479,7 @@ export default function Sidebar() {
                 <ListItemButton
                   component={NavLink}
                   to="/aula-5/inicio"
-                  sx={{ pl: 4 }} // indent para destacar subitem
+                  onClick={handleNavClick}
                   style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 >
                   <ListItemText
@@ -543,7 +497,7 @@ export default function Sidebar() {
                 <ListItemButton
                   component={NavLink}
                   to="/aula-5/for"
-                  sx={{ pl: 4 }} // indent para destacar subitem
+                  onClick={handleNavClick}
                   style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 >
                   <ListItemText
@@ -556,8 +510,6 @@ export default function Sidebar() {
                   />
                 </ListItemButton>
               </ListItem>
-
-              {/* Adicione mais subitens se quiser */}
             </List>
           </Collapse>
 
@@ -578,7 +530,6 @@ export default function Sidebar() {
               {openAula6 ? <ExpandLess /> : <ExpandMore />}
             </ListItemButton>
           </ListItem>
-
           {/* Sublista de Aula-6 */}
           <Collapse in={openAula6} timeout="auto" unmountOnExit>
             <List component="div" disablePadding>
@@ -587,7 +538,7 @@ export default function Sidebar() {
                 <ListItemButton
                   component={NavLink}
                   to="/aula-6/inicio"
-                  sx={{ pl: 4 }} // indent para destacar subitem
+                  onClick={handleNavClick}
                   style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 >
                   <ListItemText
@@ -600,13 +551,12 @@ export default function Sidebar() {
                   />
                 </ListItemButton>
               </ListItem>
-
               {/* Funções */}
               <ListItem disablePadding>
                 <ListItemButton
                   component={NavLink}
                   to="/aula-6/funcoes"
-                  sx={{ pl: 4 }} // indent para destacar subitem
+                  onClick={handleNavClick}
                   style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 >
                   <ListItemText
@@ -619,11 +569,10 @@ export default function Sidebar() {
                   />
                 </ListItemButton>
               </ListItem>
-              {/* Adicione mais subitens se quiser */}
             </List>
           </Collapse>
 
-          {/* EXERCÍCIO-1: item que expande subitens */}
+          {/* Exercício-1: item que expande subitens */}
           <ListItem disablePadding>
             <ListItemButton
               onClick={handleExercicio1Click}
@@ -635,20 +584,19 @@ export default function Sidebar() {
                   paddingLeft: "36px",
                   paddingRight: "36px",
                 }}
-                primary="Exercicio 1 - Python Básico"
+                primary="Exercício 1 - Python Básico"
               />
               {openExercicio1 ? <ExpandLess /> : <ExpandMore />}
             </ListItemButton>
           </ListItem>
-
           <Collapse in={openExercicio1} timeout="auto" unmountOnExit>
             <List component="div" disablePadding>
-              {/* Início */}
+              {/* Exercício de Soma */}
               <ListItem disablePadding>
                 <ListItemButton
                   component={NavLink}
                   to="/Exercicio-1/ex_soma"
-                  sx={{ pl: 4 }} // indent para destacar subitem
+                  onClick={handleNavClick}
                   style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 >
                   <ListItemText
@@ -661,12 +609,12 @@ export default function Sidebar() {
                   />
                 </ListItemButton>
               </ListItem>
-
+              {/* Exercício de Máximo */}
               <ListItem disablePadding>
                 <ListItemButton
                   component={NavLink}
                   to="/Exercicio-1/ex_maximo"
-                  sx={{ pl: 4 }} // indent para destacar subitem
+                  onClick={handleNavClick}
                   style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 >
                   <ListItemText
@@ -679,12 +627,12 @@ export default function Sidebar() {
                   />
                 </ListItemButton>
               </ListItem>
-
+              {/* Exercício da Área do Triângulo */}
               <ListItem disablePadding>
                 <ListItemButton
                   component={NavLink}
                   to="/Exercicio-1/ex_area_do_triangulo"
-                  sx={{ pl: 4 }} // indent para destacar subitem
+                  onClick={handleNavClick}
                   style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 >
                   <ListItemText
@@ -693,16 +641,16 @@ export default function Sidebar() {
                       paddingLeft: "36px",
                       paddingRight: "36px",
                     }}
-                    primary="Exercício da Área do Triangulo"
+                    primary="Exercício da Área do Triângulo"
                   />
                 </ListItemButton>
               </ListItem>
-
+              {/* Exercício da Área do Círculo */}
               <ListItem disablePadding>
                 <ListItemButton
                   component={NavLink}
                   to="/Exercicio-1/ex_area_do_circulo"
-                  sx={{ pl: 4 }} // indent para destacar subitem
+                  onClick={handleNavClick}
                   style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 >
                   <ListItemText
@@ -711,16 +659,16 @@ export default function Sidebar() {
                       paddingLeft: "36px",
                       paddingRight: "36px",
                     }}
-                    primary="Exercício da Área do Circulo"
+                    primary="Exercício da Área do Círculo"
                   />
                 </ListItemButton>
               </ListItem>
-
+              {/* Exercício de Inverter String */}
               <ListItem disablePadding>
                 <ListItemButton
                   component={NavLink}
                   to="/Exercicio-1/ex_inverte_string"
-                  sx={{ pl: 4 }} // indent para destacar subitem
+                  onClick={handleNavClick}
                   style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 >
                   <ListItemText
@@ -733,12 +681,12 @@ export default function Sidebar() {
                   />
                 </ListItemButton>
               </ListItem>
-
+              {/* Exercício de Somar Lista */}
               <ListItem disablePadding>
                 <ListItemButton
                   component={NavLink}
                   to="/Exercicio-1/ex_soma_positivos"
-                  sx={{ pl: 4 }} // indent para destacar subitem
+                  onClick={handleNavClick}
                   style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 >
                   <ListItemText
@@ -751,7 +699,6 @@ export default function Sidebar() {
                   />
                 </ListItemButton>
               </ListItem>
-              {/* Adicione mais subitens se quiser */}
             </List>
           </Collapse>
 
@@ -772,16 +719,14 @@ export default function Sidebar() {
               {openExercicio2 ? <ExpandLess /> : <ExpandMore />}
             </ListItemButton>
           </ListItem>
-
-          {/* Sublista de Exercício 2 */}
           <Collapse in={openExercicio2} timeout="auto" unmountOnExit>
             <List component="div" disablePadding>
-              {/* Exercicio de  Média dos negativos*/}
+              {/* Exercício de Média dos Negativos */}
               <ListItem disablePadding>
                 <ListItemButton
                   component={NavLink}
                   to="/Exercicio-2/ex_media_negativos"
-                  sx={{ pl: 4 }} // indent para destacar subitem
+                  onClick={handleNavClick}
                   style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 >
                   <ListItemText
@@ -790,17 +735,16 @@ export default function Sidebar() {
                       paddingLeft: "36px",
                       paddingRight: "36px",
                     }}
-                    primary="Exercicio de Media Negativos "
+                    primary="Exercício de Média dos Negativos"
                   />
                 </ListItemButton>
               </ListItem>
-
-              {/* Exercicio de Ordenar Listas*/}
+              {/* Exercício de Ordenar Listas */}
               <ListItem disablePadding>
                 <ListItemButton
                   component={NavLink}
                   to="/Exercicio-2/ex_ordena_lista"
-                  sx={{ pl: 4 }} // indent para destacar subitem
+                  onClick={handleNavClick}
                   style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 >
                   <ListItemText
@@ -809,16 +753,16 @@ export default function Sidebar() {
                       paddingLeft: "36px",
                       paddingRight: "36px",
                     }}
-                    primary="Exercicio de Ordenar as Listas"
+                    primary="Exercício de Ordenar Listas"
                   />
                 </ListItemButton>
               </ListItem>
-              {/* Exercicio de  Contar Palavras*/}
+              {/* Exercício de Contar Palavras */}
               <ListItem disablePadding>
                 <ListItemButton
                   component={NavLink}
                   to="/Exercicio-2/ex_conta_palavras"
-                  sx={{ pl: 4 }} // indent para destacar subitem
+                  onClick={handleNavClick}
                   style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 >
                   <ListItemText
@@ -827,16 +771,16 @@ export default function Sidebar() {
                       paddingLeft: "36px",
                       paddingRight: "36px",
                     }}
-                    primary="Exercicio de Contar Palavras"
+                    primary="Exercício de Contar Palavras"
                   />
                 </ListItemButton>
               </ListItem>
-              {/* Exercicio do Eh_primo*/}
+              {/* Exercício do Eh_primo */}
               <ListItem disablePadding>
                 <ListItemButton
                   component={NavLink}
                   to="/Exercicio-2/ex_eh_primo"
-                  sx={{ pl: 4 }} // indent para destacar subitem
+                  onClick={handleNavClick}
                   style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 >
                   <ListItemText
@@ -845,16 +789,16 @@ export default function Sidebar() {
                       paddingLeft: "36px",
                       paddingRight: "36px",
                     }}
-                    primary="Exercicio do Eh_primo"
+                    primary="Exercício do Eh_primo"
                   />
                 </ListItemButton>
               </ListItem>
-              {/* Exercicio do Celsius para Fahrenheit*/}
+              {/* Exercício do Celsius para Fahrenheit */}
               <ListItem disablePadding>
                 <ListItemButton
                   component={NavLink}
                   to="/Exercicio-2/ex_celsius_para_fahrenheit"
-                  sx={{ pl: 4 }} // indent para destacar subitem
+                  onClick={handleNavClick}
                   style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 >
                   <ListItemText
@@ -863,32 +807,14 @@ export default function Sidebar() {
                       paddingLeft: "36px",
                       paddingRight: "36px",
                     }}
-                    primary="Exercicio do Celsius para Fahrenheit"
+                    primary="Exercício do Celsius para Fahrenheit"
                   />
                 </ListItemButton>
               </ListItem>
-
-              {/* Adicione mais subitens se quiser */}
             </List>
           </Collapse>
-          {/* Você pode repetir essa lógica para mais aulas/módulos */}
         </List>
       </Drawer>
-
-      {/* Botão para abrir/fechar a sidebar */}
-      <IconButton
-        onClick={toggleDrawer}
-        sx={{
-          position: "absolute",
-          top: 20,
-          // O botão se desloca para a direita quando a sidebar abre
-          left: open ? drawerWidth + 10 : 10,
-          transition: "left 0.3s", // animação suave
-        }}
-      >
-        {/* Se estiver aberta, mostra X; senão, mostra o ícone de menu */}
-        {open ? <CloseIcon /> : <MenuIcon />}
-      </IconButton>
     </>
   );
 }

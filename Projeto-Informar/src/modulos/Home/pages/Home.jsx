@@ -1,7 +1,7 @@
 import React from "react";
-import Logo from "../assets/Logo_gas.png";
+import Logo from "../../../assets/Logo_gas.png";
 import { Box } from "@mui/material";
-import NextPage from "../components/Next_page";
+import NextPage from "../../../components/Next_page";
 
 function Home() {
   return (
@@ -17,7 +17,7 @@ function Home() {
         component="img"
         src={Logo}
         alt="Informar GAS"
-        sx={{ height: "100%" }}
+        sx={{ height: "100px" }}
       />
       <p>
         Escolha um dos temas disponíveis e avance para a próxima página para

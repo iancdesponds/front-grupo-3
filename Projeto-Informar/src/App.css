@@ -1,5 +1,12 @@
+* {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Para evitar a barra de rolagem horizontal */
+}
+
 body {
   font-family: 'Raleway', sans-serif;
+  overflow-x: hidden; /* Para evitar a barra de rolagem horizontal */
 }
 
 .app-container {
@@ -9,7 +16,7 @@ body {
 
 .content-container {
   flex: 1; 
-  padding: 160px 360px 160px 360px; /* Espaçamento no conteúdo */
+  padding: 160px 360px 60px 360px; /* Espaçamento no conteúdo */
 }
 
 h1 {
@@ -109,4 +116,11 @@ pre {
   background-color: #2a2a2a;
   border-radius: 5px;
   color: #ffcc00;
+}
+
+/* Tamanho de tela menor */
+@media screen and (max-width: 1350px) {
+  .content-container {
+    padding: max(120px, 15%) max(50px, 15%) 40px;
+  }
 }
