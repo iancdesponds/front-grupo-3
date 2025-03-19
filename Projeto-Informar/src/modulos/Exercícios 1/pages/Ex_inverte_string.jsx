@@ -6,7 +6,7 @@ function Ex_inverte_string() {
     <div>
       <h1>Exercício 1 - Função Inverte String</h1>
       <p>
-        Implemente a função <code>reserve_string()</code> que recebe uma string
+        Implemente a função <code>inverte_string()</code> que recebe uma string
         e retorna essa string invertida, ou seja, de trás para frente.
       </p>
       <CodeEditor exerciseId={5} />
